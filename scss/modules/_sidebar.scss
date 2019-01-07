@@ -1,0 +1,17 @@
+.widget-area{
+
+}
+
+.widget{
+
+  ~ .widget{
+    margin-top: 34px;
+  }
+}
+
+.widget-title{
+  font-size: 16px;
+  font-weight: $dffbold;
+  margin: 0 0 8px 0;
+  text-transform: uppercase;
+}

@@ -1,0 +1,9 @@
+## Dir
+scss/**
+
+## Files
+README.md
+CONTRIBUTING.md
+LICENSE
+.gitignore
+.deployignore

@@ -1,0 +1,122 @@
+.healcode.appointments{
+  position: relative;
+  padding-top: 38px;
+  margin: 24px 0;
+
+  .action_icon{
+    position: absolute;
+    top: 0;
+    height: 30px;
+    line-height: 30px;
+    display: inline-block;
+    color: #bdced0;
+
+    &.cart_version{
+      right: 0;
+    }
+    &.my_account_version{
+      left: 0;
+    }
+  }
+  
+  .header{
+    @include clearfix();
+
+    h1,
+    .healcode-date-label{
+      font-size: 22px;
+      font-weight: 100;
+      margin: 16px 0;
+    }
+
+    #appointment_results{
+      margin-top: 33px;
+
+      .trainer-label{
+        margin: 0 0 14px 0;
+        
+        a {
+          font-size: 18px;
+          color: darken($color__delta, 10%);
+        }
+      }
+
+      .appointment.button{
+        background: #333;
+        display: inline-block;
+        margin: 0 6px 6px 0;
+        
+        > a{
+          padding: 3px 6px;
+          color: #fff;
+          display: block;
+          font-size: 14px;
+
+          &:hover{
+            background: darken($color__delta, 20%);
+            color: #000;
+          }
+        }
+      }
+    }
+
+    > form{
+
+      .ui-datepicker{
+        padding: 0;
+        border: none;
+      }
+
+      .ui-datepicker-header{
+        border: none;
+        background: #d1eaec;
+        font-weight: 100;
+      }
+      
+      .ui-datepicker-calendar{
+
+        th{
+          font-weight: 100;
+        }
+      }
+
+      .ui-state-default{
+        background: #d1eaec;
+        text-align: center;
+      }
+
+      .pre-filters{
+
+        .hc-button.appointment{
+          text-align: center;
+          padding: 8px 16px;
+          background: $color__delta;
+          color: #000;
+          text-decoration: none;
+          display: block;
+          font-size: 18px;
+        }
+
+        select,
+        .ui-datepicker{
+          width: 100%;
+        }
+        
+        select{
+          -webkit-appearance: none;
+          -moz-appearance: none;
+          appearance: none;
+          background: #d1eaec;
+          border: none;
+          padding: 10px 16px;
+          outline: 0;
+        }
+      }
+    }
+  }
+
+  .hc_footer{
+    @include clearfix();
+    margin-top: 24px;
+  }
+}

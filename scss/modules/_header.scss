@@ -1,0 +1,246 @@
+$header__height: 34px;
+
+.site-header{
+  padding-top: 16px;
+  margin-bottom: 44px;
+  position: relative;
+  z-index: 400;
+
+  @media (min-width: $screen-md-min){
+    padding-top: 50px;
+  }
+
+  .ctn{
+    height: $header__height;
+    @include clearfix();
+  }
+
+  .brand{
+    height: inherit;
+    float: left;
+  }
+}
+
+// Brand
+.brand{
+  position: relative;
+}
+
+.brand-uri{
+  padding: 2px 0;
+  display: block;
+}
+
+.brand-img{
+  width: auto;
+  height: ($header__height - 4);
+  max-width: none;
+
+  &.desktop{
+    display: none;
+
+    @media (min-width: $screen-md-min){
+      display: block;
+    }
+  }
+
+  &.mobile{
+    display: block;
+
+    @media (min-width: $screen-md-min){
+      display: none;
+    }
+  }
+}
+
+// Navigation
+.main-navigation{
+  font-size: 0;
+  float: right;
+  height: inherit;
+  @include clearfix();
+
+  .menu{
+    @include clearfix();
+
+    @media (min-width: $screen-md-min){
+      height: inherit;
+    }
+
+    @media (max-width: $screen-sm-max){
+      position: absolute;
+      top: 120%;
+      left: 16px;
+      right: 16px;
+
+      background: #fff;
+
+      opacity: 0;
+      -webkit-border-radius: 4px;
+      border-radius: 4px;
+      visibility: hidden;
+      -webkit-box-shadow: 0px 2px 10px 0px rgba(0,0,0,0.3);
+      -moz-box-shadow: 0px 2px 10px 0px rgba(0,0,0,0.3);
+      box-shadow: 0px 2px 10px 0px rgba(0,0,0,0.3);
+      -webkit-transition: all 0.2s cubic-bezier(0.785, 0.135, 0.15, 0.86);
+      -moz-transition: all 0.2s cubic-bezier(0.785, 0.135, 0.15, 0.86);
+      -ms-transition: all 0.2s cubic-bezier(0.785, 0.135, 0.15, 0.86);
+      -o-transition: all 0.2s cubic-bezier(0.785, 0.135, 0.15, 0.86);
+      transition: all 0.2s cubic-bezier(0.785, 0.135, 0.15, 0.86);
+      -webkit-transform: scale(0.9) translateY(-20%);
+      -moz-transform: scale(0.9) translateY(-20%);
+      -ms-transform: scale(0.9) translateY(-20%);
+      transform: scale(0.9) translateY(-20%);
+    }
+  }
+
+  &.toggled{
+
+    .menu{
+      -webkit-transform: scale(1) translateY(0);
+      -moz-transform: scale(1) translateY(0);
+      -ms-transform: scale(1) translateY(0);
+      transform: scale(1) translateY(0);
+      visibility: visible;
+      opacity: 1;
+    }
+  }
+
+  ul{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+
+    @media (max-width: $screen-sm-max){
+      padding: 8px 0 8px 0;
+    }
+
+    ul{
+      box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
+      float: left;
+      position: absolute;
+      top: 100%;
+      left: -999em;
+      z-index: 99999;
+      display: none;
+
+      @media (min-width: $screen-md-min){
+        display: block;
+      }
+
+      a{
+        width: 200px;
+      }
+
+      ul{
+        left: -999em;
+        top: 0;
+      }
+    }
+  }
+
+  li{
+    text-align: center;
+    height: $header__height * 1.4;
+    line-height: $header__height * 1.4;
+
+    &.hh{
+
+      a{
+        font-weight: $dffregular;
+        color: #06adca;
+      }
+    }
+
+    &.current-menu-item a{
+      color: $color__eve;
+    }
+
+    @media (max-width: $screen-sm-max){
+      ~ li{
+        border-top: 1px solid #f1f1f1;
+      }
+    }
+
+    @media (min-width: $screen-md-min){
+      float: left;
+      height: $header__height;
+      line-height: $header__height;
+
+      ~ li{
+        margin-left: 16px;
+      }
+    }
+    
+    a{
+      display: block;
+      text-decoration: none;
+      color: #333;
+      font-size: 16px;
+      height: inherit;
+      line-height: inherit;
+      padding: 0 8px;
+    }
+
+    &:hover a{
+      color: $color__eve;  
+    }
+  }
+}
+
+.main-navigation ul ul li:hover > ul,
+.main-navigation ul ul li.focus > ul {
+	left: 100%;
+}
+
+.main-navigation ul li:hover > ul,
+.main-navigation ul li.focus > ul {
+	left: auto;
+}
+
+.menu-toggle{
+  line-height: 1;
+  padding: 0;
+  margin: 0;
+  border: none;
+  background: transparent;
+
+  > span{
+    display: block;
+    width: 24px;
+    height: 4px;
+    background: #333;
+
+    ~ span{
+      margin-top: 5px;
+    }
+  }
+}
+
+@media (min-width: $screen-md-min) {
+	.menu-toggle {
+		display: none;
+	}
+}
+
+.site-main .comment-navigation, .site-main
+.posts-navigation, .site-main
+.post-navigation {
+	margin: 0 0 1.5em;
+	overflow: hidden;
+}
+
+.comment-navigation .nav-previous,
+.posts-navigation .nav-previous,
+.post-navigation .nav-previous {
+	float: left;
+	width: 50%;
+}
+
+.comment-navigation .nav-next,
+.posts-navigation .nav-next,
+.post-navigation .nav-next {
+	float: right;
+	text-align: right;
+	width: 50%;
+}

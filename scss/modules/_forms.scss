@@ -1,0 +1,33 @@
+.df-btn{
+  display: inline-block;
+  padding: 12px 22px;
+  text-decoration: none;
+  color: $color__dark;
+  font-weight: $dffregular;
+  font-size: 16px;
+  -webkit-border-radius: 2px;
+  border-radius: 2px;
+  border: 2px solid lighten( $color__dark, 80% );
+  background: lighten( $color__dark, 80% );
+
+  @media (min-width: $screen-md-min){
+    border: 2px solid transparent;
+    background: transparent;
+  }
+
+  &.dark{
+    color: #fff;
+    border-color: $color__dark;
+    background: $color__dark;
+  }
+
+  &.primary{
+    color: $color__dark;
+    border-color: $color__eve;
+    background: $color__eve;
+  }
+
+  &.small{
+    padding: 6px 12px;
+  }
+}
