@@ -16,7 +16,7 @@ function add_gallery_metabox($post_type) {
 	if (in_array($post_type, $types)) {
 		add_meta_box(
 			'gallery-metabox',
-			'Transformation Gallery',
+			'Esemény galéria',
 			'gallery_meta_callback',
 			$post_type,
 			'normal',

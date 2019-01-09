@@ -632,6 +632,40 @@ endif;
 
 
 
+if ( ! function_exists( 'eve_admin_remove_menus' ) ) :
+	/**
+	 * Admin menu removal
+	 */
+  function eve_admin_remove_menus()
+  {
+    // remove_menu_page( 'index.php' );
+    // remove_menu_page( 'jetpack' );  
+    // remove_menu_page( 'edit.php' ); 
+    // remove_menu_page( 'upload.php' );             
+    // remove_menu_page( 'edit.php?post_type=page' );
+    remove_menu_page( 'edit-comments.php' );      
+    // remove_menu_page( 'themes.php' );             
+    // remove_menu_page( 'plugins.php' );            
+    // remove_menu_page( 'users.php' );
+    // remove_menu_page( 'tools.php' );
+    // remove_menu_page( 'options-general.php' );    
+  }
+endif;
+
+
+
+if ( ! function_exists( 'eve_admin_bar_render' ) ) :
+	/**
+	 * Remove comments menu from admin bar
+	 */
+  function eve_admin_bar_render() {
+    global $wp_admin_bar;
+    $wp_admin_bar->remove_menu('comments');
+  }
+endif;
+
+
+
 if ( ! function_exists( 'eve_foo' ) ) :
 	/**
 	 * Comment

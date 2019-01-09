@@ -27,7 +27,7 @@
 <header class="site-header">
 	<div class="ctn max">
 		<div class="brand">
-			<a class="brand-uri fr" href="<?php echo get_site_url(); ?>"><img class="brand-img desktop loadlzly" data-src="<?php echo get_template_directory_uri(); ?>/img/progresseve-logo.png" alt="<?php echo get_bloginfo('name'); ?>"><img class="brand-img mobile loadlzly" data-src="<?php echo get_template_directory_uri(); ?>/img/progresseve-m-logo.png" alt="<?php echo get_bloginfo('name'); ?>"></a>
+			<a class="brand-uri fr" href="<?php echo get_site_url(); ?>"><img class="brand-img" src="<?php echo get_template_directory_uri(); ?>/img/eventikum-logo.png" alt="<?php echo get_bloginfo('name'); ?>"></a>
 		</div>
 		<nav id="site-navigation" class="main-navigation">
 			<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><span></span><span></span><span></span></button>

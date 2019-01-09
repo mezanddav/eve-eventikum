@@ -78,13 +78,29 @@ if ( ! function_exists( 'eve_setup' ) ) :
 			'flex-height' => true,
 		) );
 
-		/**
-		 * Image sizes
-		 */
-		// add_image_size( 'section-desktop-bg', 1480, 600, true );
+		## Image sizes
+
+		# 1:1 / 10x10 Thumbnail size for: Events, Organizers, Presenters, Gallery
+		add_image_size( 'one-one-image-thumb', 10, 10, true );
+		add_image_size( 'one-one-gallery-thumb', 100, 100, true );
+		
+		# 1:1 / 500x500 Full size for: Events, Organizers, Presenters
+		add_image_size( 'one-one-image-full', 500, 500, true );
+
+		# 3:1 / 30x10 Thumbnail size for: Events
+		add_image_size( 'tree-one-events-thumb', 30, 10, true );
+		
+		# 3:1 / 30x10 Full size for: Events
+		add_image_size( 'tree-one-events-full', 900, 300, true );
 	}
 endif;
 add_action( 'after_setup_theme', 'eve_setup' );
+
+
+
+require get_theme_file_path('template-inc/cpt-events.php');
+require get_theme_file_path('template-inc/cpt-presenters.php');
+require get_theme_file_path('template-inc/cpt-organizers.php');
 
 
 
@@ -213,6 +229,8 @@ add_filter( 'body_class', 'eve_body_classes' ); // Adding body classes
 add_filter( 'wp_resource_hints', 'progresseve_resource_hints', 0, 2 );
 add_filter( 'xmlrpc_methods', 'ayn_remove_xmlrpc_pingback_ping' );
 add_filter( 'wp_default_scripts', 'eve_remove_jquery_migrate' );
+add_action( 'admin_menu', 'eve_admin_remove_menus' );
+add_action( 'wp_before_admin_bar_render', 'eve_admin_bar_render' );
 add_filter( 'widget_text', 'do_shortcode' );
 
 // Blog and posts

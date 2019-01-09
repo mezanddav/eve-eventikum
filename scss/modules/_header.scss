@@ -1,14 +1,9 @@
 $header__height: 34px;
 
 .site-header{
-  padding-top: 16px;
-  margin-bottom: 44px;
+  padding: 20px 0;
   position: relative;
   z-index: 400;
-
-  @media (min-width: $screen-md-min){
-    padding-top: 50px;
-  }
 
   .ctn{
     height: $header__height;
@@ -35,22 +30,6 @@ $header__height: 34px;
   width: auto;
   height: ($header__height - 4);
   max-width: none;
-
-  &.desktop{
-    display: none;
-
-    @media (min-width: $screen-md-min){
-      display: block;
-    }
-  }
-
-  &.mobile{
-    display: block;
-
-    @media (min-width: $screen-md-min){
-      display: none;
-    }
-  }
 }
 
 // Navigation
