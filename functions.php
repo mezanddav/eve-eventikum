@@ -81,16 +81,16 @@ if ( ! function_exists( 'eve_setup' ) ) :
 		## Image sizes
 
 		# 1:1 / 10x10 Thumbnail size for: Events, Organizers, Presenters, Gallery
-		add_image_size( 'one-one-image-thumb', 10, 10, true );
+		add_image_size( 'one-one-image-thumb', 20, 20, true );
 		add_image_size( 'one-one-gallery-thumb', 100, 100, true );
 		
 		# 1:1 / 500x500 Full size for: Events, Organizers, Presenters
 		add_image_size( 'one-one-image-full', 500, 500, true );
 
-		# 3:1 / 30x10 Thumbnail size for: Events
-		add_image_size( 'tree-one-events-thumb', 30, 10, true );
+		# 3:1 / 60x20 Thumbnail size for: Events
+		add_image_size( 'tree-one-events-thumb', 60, 20, true );
 		
-		# 3:1 / 30x10 Full size for: Events
+		# 3:1 / 900x300 Full size for: Events
 		add_image_size( 'tree-one-events-full', 900, 300, true );
 	}
 endif;
@@ -186,6 +186,15 @@ function eve_widgets_init() {
 		'before_title'  => '<h2 class="widget-title">',
 		'after_title'   => '</h2>',
 	) );
+	register_sidebar( array(
+		'name'          => esc_html__( 'Esemény sidebar', 'eve' ),
+		'id'            => 'sidebar-events',
+		'description'   => esc_html__( 'Add widgets here.', 'eve' ),
+		'before_widget' => '<section id="%1$s" class="widget %2$s">',
+		'after_widget'  => '</section>',
+		'before_title'  => '<h2 class="widget-title">',
+		'after_title'   => '</h2>',
+	) );
 }
 add_action( 'widgets_init', 'eve_widgets_init' );
 
@@ -247,7 +256,7 @@ if( get_option('eve_html_compression') == 1 && get_option('eve_environment_detai
 }
 
 // Template actions
-// add_action( 'wp_footer', 'eve_theme_icons', 10 );
+add_action( 'wp_footer', 'eve_theme_icons', 10 );
 
 // GTM Tracking Code
 add_action( 'wp_head', 'progresseve_gtm_core', 5 );

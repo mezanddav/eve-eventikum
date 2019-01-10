@@ -5,7 +5,7 @@ $color__dark: #043136;
 
 
 //== Fonts
-$dff: Arial, Helvetica, sans-serif;
+$dff: 'Montserrat', Arial, Helvetica, sans-serif;
 $dlh: 1.15;
 
 $dffthin: 100;
@@ -23,13 +23,16 @@ $dffboldi: 700i;
 $dffblack: 900;
 $dffblacki: 900i;
 
+$sff: 'Bree Serif', serif;
+$sffregular: 400;
+
 
 
 //== Other
 //** Usage: url( $template__baseurl + 'wp-content/themes/' + $template__name + '/img/statistic-bg.jpg')
-$template__name: 'eve-deltafitness';
-// $template__baseurl: 'localhost';
-$template__baseurl: 'https://www.deltafitness.london/';
+$template__name: 'eve-eventikum';
+$template__baseurl: 'http://localhost/wordpress/';
+// $template__baseurl: 'https://www.deltafitness.london/';
 
 
 //== Media queries breakpoints

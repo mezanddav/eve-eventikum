@@ -1,0 +1,38 @@
+.profile-rev{
+  position: relative;
+  padding: 0 0 0 54px;
+}
+
+.profile-rev__img{
+  position: absolute;
+  overflow: hidden;
+  width: 40px;
+  height: 40px;
+  top: 0;
+  left: 0;
+
+  &.presenter{
+    -webkit-border-radius: 50%;
+    border-radius: 50%;
+  }
+
+  &.organizer{
+    -webkit-border-radius: 8px;
+    border-radius: 8px;
+  }
+}
+
+.profile-rev__wrp{
+  padding: 2px 0;
+}
+
+.profile-rev__name{
+  font-size: 16px;
+  color: #667C99;
+  margin: 0 0 5px 0;
+}
+
+.profile-rev__title{
+  font-size: 12px;
+  color: #A9B1BE;
+}

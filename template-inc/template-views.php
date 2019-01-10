@@ -286,6 +286,52 @@ endif;
 
 
 
+if ( ! function_exists( 'eve_get_profile' ) ) :
+	/**
+	 * Get small profile previews
+	 */
+	function eve_get_profile( $type, $id )
+	{
+		if( $type == 'presenter' ){
+			$args = array(
+				'field_name' => 'eventikum_eloado',
+				'field_speciality' => 'eventikum_specialitasa',
+				'field_important' => 'kiemelt_eloado',
+				'field_link' => 'eventikum_eloado_linkjei',
+				'field_classes' => 'presenter'
+			);
+		}else if( $type == 'organizer' ){
+			$args = array(
+				'field_name' => 'eventikum_szervezo',
+				'field_speciality' => 'Szervező',
+				'field_link' => 'eventikum_szervezo_linkjei',
+				'field_classes' => 'organizer sh'
+			);
+		}
+
+		$profile = get_field( $args['field_name'], $id );
+		$profile_ID = $profile->ID;
+
+		if( $type == 'presenter' ){
+			$args['field_speciality'] = get_field( $args['field_speciality'], $profile_ID );
+		}
+
+		$profile_title = get_the_title( $profile_ID );
+
+?>
+<div class="profile-rev">
+	<img class="profile-rev__img loadlzly <?php echo $args['field_classes']; ?>" src="<?php echo get_the_post_thumbnail_url( $profile_ID, 'one-one-image-thumb' ); ?>" data-src="<?php echo get_the_post_thumbnail_url( $profile_ID, 'one-one-gallery-thumb' ); ?>" alt="<?php echo $profile_title; ?>">
+	<div class="profile-rev__wrp">
+		<div class="profile-rev__name"><?php echo $profile_title; ?></div>
+		<div class="profile-rev__title"><?php echo $args['field_speciality']; ?></div>
+	</div>
+</div>
+<?php
+	}
+endif;
+
+
+
 if ( ! function_exists( 'eve_foo' ) ) :
 	/**
 	 * Comment

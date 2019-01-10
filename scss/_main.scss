@@ -1,5 +1,5 @@
 body{
-  font-family: 'Montserrat', Arial, Helvetica, sans-serif;
+  font-family: $dff;
   font-size: 16px;
 
   > svg{
@@ -17,20 +17,26 @@ img:not([src]) {
   visibility: hidden;
 }
 
-.loadlzly{
-  opacity: 0;
-  -webkit-transition: opacity 0.6s linear 1s;
-  transition: opacity 0.6s linear 1s;
+// .loadlzly{
+//   opacity: 0;
+//   -webkit-transition: opacity 0.6s linear 1s;
+//   transition: opacity 0.6s linear 1s;
 
-  &.loaded{
-    opacity: 1;
-  }
-}
+//   &.loaded{
+//     opacity: 1;
+//   }
+// }
 
 .site{
   max-width: 1980px;
   margin: 0 auto;
   overflow: hidden;
+}
+
+.sh{
+  -webkit-box-shadow: 0px 3px 16px 0px rgba(225,231,240,1);
+  -moz-box-shadow: 0px 3px 16px 0px rgba(225,231,240,1);
+  box-shadow: 0px 3px 16px 0px rgba(225,231,240,1);
 }
 
 // Left right
@@ -61,7 +67,7 @@ img:not([src]) {
   &.max{
     margin: 0 auto;
     width: 100%;
-    max-width: 1180px;
+    max-width: 930px;
     padding-left: 15px;
     padding-right: 15px;
 
@@ -82,7 +88,7 @@ img:not([src]) {
   &.with-sidebar{
     @media (min-width: $screen-md-min){
       float: left;
-      padding-right: 324px;
+      padding-right: 340px;
       width: 100%;
     }
   }
@@ -92,8 +98,8 @@ img:not([src]) {
 
   @media (min-width: $screen-md-min){
     float: right;
-    margin-left: -300px;
-    width: 300px;
+    margin-left: -310px;
+    width: 310px;
   }
 }
 
