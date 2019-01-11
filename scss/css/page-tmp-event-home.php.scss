@@ -8,13 +8,24 @@
   margin: 0 0 20px 0;
   -webkit-border-radius: 8px;
   border-radius: 8px;
+
+  &.mobile{
+    margin: 0 -5px 20px -5px;
+  }
 }
 
 .evenp__banner-psn{
   position: inherit;
   z-index: 30;
   font-size: 0;
-  padding-bottom: 33.333%;
+
+  &.mobile{
+    padding-bottom: 50%;
+  }
+
+  &.desktop{
+    padding-bottom: 33.333%;
+  }
 }
 
 .evenp__banner-img{

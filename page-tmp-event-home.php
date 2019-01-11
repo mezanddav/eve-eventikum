@@ -19,10 +19,14 @@ get_header('tmp');
 
 ?>
 <div class="ctn max">
-	<div class="evenp__banner sh">
+	<div class="evenp__banner sh<?php if(wp_is_mobile()){ echo ' mobile'; } ?>">
 		<div class="evenp__banner-presenter"><?php eve_get_profile( 'presenter', get_the_ID() ); ?></div>
 		<div class="evenp__banner-presenter-bg"></div>
-		<div class="evenp__banner-psn"><img class="evenp__banner-img loadlzly" src="<?php echo get_the_post_thumbnail_url( get_the_ID(), 'tree-one-events-thumb' ); ?>" data-src="<?php echo get_the_post_thumbnail_url( get_the_ID(), 'tree-one-events-full' ); ?>"></div>
+		<?php if( wp_is_mobile() ): ?>
+		<div class="evenp__banner-psn mobile"><img class="evenp__banner-img loadlzly" src="<?php echo get_the_post_thumbnail_url( get_the_ID(), 'two-one-events-thumb' ); ?>" data-src="<?php echo get_the_post_thumbnail_url( get_the_ID(), 'two-one-events-full' ); ?>"></div>
+		<?php else: ?>
+		<div class="evenp__banner-psn desktop"><img class="evenp__banner-img loadlzly" src="<?php echo get_the_post_thumbnail_url( get_the_ID(), 'tree-one-events-thumb' ); ?>" data-src="<?php echo get_the_post_thumbnail_url( get_the_ID(), 'tree-one-events-full' ); ?>"></div>
+		<?php endif; ?>
 	</div>
 	<div class="content-area">
 		<div class="content-main with-sidebar">
@@ -39,7 +43,7 @@ get_header('tmp');
 				<?php endwhile; ?>
 			</main>
 		</div>
-		<div class="content-aside"><?php //get_sidebar('events'); ?></div>
+		<div class="content-aside"><?php get_sidebar('events'); ?></div>
 	</div>
 </div>
 <div class="evenp__gmap"></div>
