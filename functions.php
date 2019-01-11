@@ -97,7 +97,7 @@ if ( ! function_exists( 'eve_setup' ) ) :
 		add_image_size( 'two-one-events-thumb', 60, 30, true );
 
 		# 2:1 / 900x450 Full size for mobile: Events
-		add_image_size( 'two-one-events-full', 900, 300, true );
+		add_image_size( 'two-one-events-full', 900, 450, true );
 	}
 endif;
 add_action( 'after_setup_theme', 'eve_setup' );
