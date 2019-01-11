@@ -20,7 +20,7 @@ get_header('tmp');
 ?>
 <div class="ctn max">
 	<div class="evenp__banner sh<?php if(wp_is_mobile()){ echo ' mobile'; } ?>">
-		<div class="evenp__banner-presenter"><?php eve_get_profile( 'presenter', get_the_ID() ); ?></div>
+		<div class="evenp__banner-presenter<?php if(wp_is_mobile()){ echo ' mobile'; } ?>"><?php eve_get_profile( 'presenter', get_the_ID() ); ?></div>
 		<div class="evenp__banner-presenter-bg"></div>
 		<?php if( wp_is_mobile() ): ?>
 		<div class="evenp__banner-psn mobile"><img class="evenp__banner-img loadlzly" src="<?php echo get_the_post_thumbnail_url( get_the_ID(), 'two-one-events-thumb' ); ?>" data-src="<?php echo get_the_post_thumbnail_url( get_the_ID(), 'two-one-events-full' ); ?>"></div>
