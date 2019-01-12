@@ -2,8 +2,8 @@
 
 function gallery_metabox_enqueue($hook) {
 	if ( 'post.php' == $hook || 'post-new.php' == $hook ) {
-		wp_enqueue_script('gallery-metabox', get_template_directory_uri() . '/template-inc/admin/gallery-metabox.js', array('jquery', 'jquery-ui-sortable'));
-		wp_enqueue_style('gallery-metabox', get_template_directory_uri() . '/template-inc/admin/gallery-metabox.css');
+		wp_enqueue_script('gallery-metabox', get_template_directory_uri() . '/template-inc/admin/gallery-metabox/gallery-metabox.js', array('jquery', 'jquery-ui-sortable'));
+		wp_enqueue_style('gallery-metabox', get_template_directory_uri() . '/template-inc/admin/gallery-metabox/gallery-metabox.css');
 	}
 }
 add_action('admin_enqueue_scripts', 'gallery_metabox_enqueue');
@@ -11,7 +11,7 @@ add_action('admin_enqueue_scripts', 'gallery_metabox_enqueue');
 function add_gallery_metabox($post_type) {
 
 	// Post type(s)
-	$types = array('events');
+	$types = array( 'events', 'page' );
 
 	if (in_array($post_type, $types)) {
 		add_meta_box(

@@ -229,6 +229,10 @@ function eve_scripts()
 	// if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 	// 	wp_enqueue_script( 'comment-reply' );
 	// }
+
+	if( is_singular('events') || is_front_page() ) {
+		add_action( 'wp_footer', 'eve_photoswipe_gallery_dom', 20 );
+	}
 }
 add_action( 'wp_enqueue_scripts', 'eve_scripts' );
 

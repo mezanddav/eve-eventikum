@@ -332,6 +332,96 @@ endif;
 
 
 
+if ( ! function_exists( 'eve_get_gallery' ) ) :
+	/**
+	 * Get events gallery
+	 */
+	function eve_get_gallery( $id )
+	{
+		$images = get_post_meta( $id, 'vdw_gallery_id', true );
+
+		if( $images ):
+			?>
+			<div class="evenp-gallery__wrp">
+			<h3 class="evenp-gallery__title">GALÉRIA</h3>
+			<div id="evenp-gallery" class="gallery"><?php
+
+			echo '<div class="gallery__row">';
+			$gallery_loop = 1;
+			foreach( $images as $image ):
+
+				$preload_image = wp_get_attachment_image_src( $image, 'one-one-image-thumb', false );
+				$thumbnail_image = wp_get_attachment_image_src( $image, 'one-one-gallery-thumb', false );
+				$large_image = wp_get_attachment_image_src( $image, 'large', false );
+
+				?><div class="gallery__col"><figure class="gallery__fig sh" data-imgsrc="<?php echo $large_image[0]; ?>" data-imgsize="<?php echo $large_image[1]; ?>x<?php echo $large_image[2]; ?>" data-imgindex="<?php echo $gallery_loop - 1; ?>"><img class="gallery_img loadlzly" src="<?php echo $preload_image[0]; ?>" data-src="<?php echo $thumbnail_image[0]; ?>"></figure></div><?php
+
+				if( ($gallery_loop % 4) === 0 ){echo '</div><div class="gallery__row">';}
+				$gallery_loop++;
+
+			endforeach;
+			echo '</div>';
+
+			?></div>
+			</div>
+			<?php
+
+		endif;
+
+	}
+endif;
+
+
+
+if ( ! function_exists( 'eve_photoswipe_gallery_dom' ) ) :
+	/**
+	 * Gallery DOM for PhotoSwipe
+	 */
+	function eve_photoswipe_gallery_dom()
+	{
+?>
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+	<div class="pswp__bg"></div>
+	<div class="pswp__scroll-wrap">
+			<div class="pswp__container">
+				<div class="pswp__item"></div>
+				<div class="pswp__item"></div>
+				<div class="pswp__item"></div>
+			</div>
+			<div class="pswp__ui pswp__ui--hidden">
+				<div class="pswp__top-bar">
+					<div class="pswp__counter"></div>
+					<button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+					<button class="pswp__button pswp__button--share" title="Share"></button>
+					<button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+					<button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+					<div class="pswp__preloader">
+						<div class="pswp__preloader__icn">
+							<div class="pswp__preloader__cut">
+								<div class="pswp__preloader__donut"></div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+					<div class="pswp__share-tooltip"></div> 
+				</div>
+				<button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+				</button>
+				<button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+				</button>
+				<div class="pswp__caption">
+					<div class="pswp__caption__center"></div>
+				</div>
+			</div>
+	</div>
+</div>
+<?php
+	}
+endif;
+
+
+
 if ( ! function_exists( 'eve_foo' ) ) :
 	/**
 	 * Comment

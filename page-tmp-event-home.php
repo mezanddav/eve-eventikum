@@ -44,7 +44,7 @@ get_header('tmp');
 					<?php eve_get_profile( 'organizer', get_the_ID() ); ?>
 				</div>
 				<div class="evenp__content"><?php the_content(); ?></div>
-				<div class="evenp__gallery"></div>
+				<div class="evenp__gallery"><?php eve_get_gallery( get_the_ID() ); ?></div>
 				<div class="evenp__share"></div>
 				<?php endwhile; ?>
 			</main>

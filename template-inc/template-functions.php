@@ -439,10 +439,62 @@ var eveLazyLoad = new LazyLoad({
 	elements_selector: '.loadlzly', callback_set: function(el){ el.classList.add( 'active' ); }
 });
 
+(function() {
+  var css = document.createElement('link');
+  css.rel = 'stylesheet';
+  css.href = '<?php echo get_template_directory_uri(); ?>/css/photoswipe.css?v=<?php echo progresseve_verison_control(); ?>';
+  css.type = 'text/css';
+  var godefer = document.getElementsByTagName('link')[0];
+  godefer.parentNode.insertBefore(css, godefer);
+})();
+
+(function() {
+  var wf = document.createElement('script');
+  wf.src = '<?php echo get_template_directory_uri(); ?>/js/photoswipe.min.js?v=<?php echo progresseve_verison_control(); ?>';
+  wf.type = 'text/javascript';
+  document.body.appendChild(wf);
+})();
+
 jQuery(document).ready(function($) {
-console.log('<?php echo esc_html(get_bloginfo('name')); ?>');
-$("a[href*='#']:not([href='#'])").click(function(){if(location.pathname.replace(/^\//,"")==this.pathname.replace(/^\//,"")&&location.hostname==this.hostname){var t=$(this.hash);if((t=t.length?t:$("[name="+this.hash.slice(1)+"]")).length)return $("html,body").animate({scrollTop:t.offset().top},1e3),!1}});
-(function(){ })();
+  (function(){ console.log('<?php echo esc_html(get_bloginfo('name')); ?>'); })();
+
+  $("a[href*='#']:not([href='#'])").click(function(){if(location.pathname.replace(/^\//,"")==this.pathname.replace(/^\//,"")&&location.hostname==this.hostname){var t=$(this.hash);if((t=t.length?t:$("[name="+this.hash.slice(1)+"]")).length)return $("html,body").animate({scrollTop:t.offset().top},1e3),!1}});
+
+  var initPhotoSwipe = function( gallerySelector ) {
+    container = document.getElementById( gallerySelector );
+    if( !container ) { return; }
+    
+    var items = [];
+    $('.gallery__fig').each(function(index, value){
+      var size = $(this).data('imgsize').split('x');
+      var item = {
+        src: $(this).data('imgsrc'),
+        w: parseInt(size[0], 10),
+        h: parseInt(size[1], 10),
+        index: $(this).data('imgindex')
+      };
+      items.push(item); });
+
+    function openPhotoSwipe(index){
+      var pswp = document.querySelectorAll('.pswp')[0];
+      var options = {
+        index: index };
+
+      if (typeof PhotoSwipe === 'function'){
+        gallery = new PhotoSwipe( pswp, PhotoSwipeUI_Default, items, options );
+        gallery.init();
+      }
+    }
+
+    $('.gallery__fig').each(function(index, value){
+      $(this).on( 'click', function(e){
+        e = e || window.event;
+        e.preventDefault ? e.preventDefault() : e.returnValue = false;
+        openPhotoSwipe( index ); });
+    });
+  }
+  initPhotoSwipe('evenp-gallery');
+  
 });
 </script>
 <?php
