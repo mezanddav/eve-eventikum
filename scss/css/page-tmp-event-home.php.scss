@@ -103,8 +103,9 @@
   font-family: $sff;
   font-weight: $sffregular;
   color: #475669;
-  font-size: 34px;
+  font-size: 33px;
   margin: 0 0 20px 0;
+  line-height: 1.4;
 
   @media (min-width: $screen-sm-min){
     font-size: 44px;
