@@ -103,19 +103,19 @@
   font-family: $sff;
   font-weight: $sffregular;
   color: #475669;
-  font-size: 33px;
+  font-size: 30px;
   margin: 0 0 20px 0;
   line-height: 1.4;
 
   @media (min-width: $screen-sm-min){
-    font-size: 44px;
+    font-size: 40px;
   }
 }
 
 .evenp__subtitle{
   font-size: 20px;
   font-weight: $dffbold;
-  color: #475669;
+  color: #88c446;
 }
 
 .evenp__organizer{
