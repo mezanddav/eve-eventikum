@@ -213,7 +213,7 @@ function eve_scripts()
 	if( file_exists( get_template_directory() . '/inline.css' ) ){
 		add_action( 'wp_head', 'progresseve_inline_style', 100 );
 	}else{
-		wp_enqueue_style( 'eve-style', get_stylesheet_uri() );
+		wp_enqueue_style( 'eve-style', get_stylesheet_uri(), array(), false );
 	}
 	wp_enqueue_script( 'jquery' );
 	add_action( 'wp_footer', 'progresseve_scripts', 1 );

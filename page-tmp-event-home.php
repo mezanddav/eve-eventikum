@@ -34,6 +34,7 @@ get_header('tmp');
 				<?php while ( have_posts() ): the_post(); ?>
 				<div class="evenp__tags_breadcrumb"><?php the_breadcrumb(); ?></div>
 				<div class="evenp__title"><?php the_title(); ?></div>
+				<div class="evenp__subtitle"><?php echo get_field( 'eventikum_esemeny_eloadas_cime', get_the_ID() ); ?></div>
 				<div class="evenp__organizer">
 					<?php eve_get_profile( 'organizer', get_the_ID() ); ?>
 				</div>

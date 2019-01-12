@@ -521,19 +521,13 @@ if ( !function_exists( 'progresseve_fonts_url' ) ) :
   function progresseve_fonts_url() {
     $fonts_url = '';
 
-    $font_families = array();
-    $font_families[] = 'Montserrat:400,700';
-    $font_families[] = 'Bree+Serif';
-
     $query_args = array(
-      'family' => urlencode( implode( '|', $font_families ) ),
-      'subset' => urlencode( 'latin-ext' )
-      // 'subset' => urlencode( 'latin' ),
+      'family' => 'Bree+Serif|Montserrat:400,700&amp;subset=latin-ext'
     );
 
     $fonts_url = add_query_arg( $query_args, 'https://fonts.googleapis.com/css' );
 
-    return esc_url_raw( $fonts_url );
+    return $fonts_url;
   }
 endif;
 
