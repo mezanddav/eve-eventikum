@@ -32,7 +32,12 @@ get_header('tmp');
 		<div class="content-main with-sidebar">
 			<main class="evenp__main">
 				<?php while ( have_posts() ): the_post(); ?>
-				<div class="evenp__tags_breadcrumb"><?php the_breadcrumb(); ?></div>
+				<div class="evenp__tags_breadcrumb">
+					<?php if( get_field('eventikum_kategoria') ){
+						?><div class="evenp__tag"><?php echo get_field( 'eventikum_kategoria', get_the_ID() ); ?></div><?php
+					} ?>
+					<?php the_breadcrumb(); ?>
+				</div>
 				<div class="evenp__title"><?php the_title(); ?></div>
 				<div class="evenp__subtitle"><?php echo get_field( 'eventikum_esemeny_eloadas_cime', get_the_ID() ); ?></div>
 				<div class="evenp__organizer">
