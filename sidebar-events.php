@@ -8,11 +8,6 @@
  */
 
 ?>
-<aside class="evenp__sidebar">
-	<div class="evenp__sidebar-inner">
-	
-	</div>
-	<?php if ( is_active_sidebar( 'sidebar-events' ) ): ?>
+<?php if ( is_active_sidebar( 'sidebar-events' ) ): ?>
 	<div><?php dynamic_sidebar( 'sidebar-events' ); ?></div>
-	<?php endif; ?>
-</aside>
+<?php endif; ?>

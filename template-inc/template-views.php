@@ -422,6 +422,31 @@ endif;
 
 
 
+if ( ! function_exists( 'eve_get_event_date_diff' ) ) :
+	/**
+	 * Get how many days until the event
+	 */
+	function eve_get_event_date_diff($id)
+	{
+		$event_date = new DateTime(get_field('eventikum_datum', $id));
+		$current_date = new DateTime(date('Y-m-d'));
+		
+		$difference = $current_date->diff($event_date);
+	
+		if ( $event_date == $current_date ) {
+			_e( 'Az esemény ma van!', 'eventikum' );
+		}else if( $event_date > $current_date ){
+			printf( '%s nap a rendezvényig', $difference->d );
+		}else if( $event_date < $current_date ){
+			_e( '<span class="error">Ez a rendezvény már lejárt.<span>', 'eventikum' );
+		}else{
+			_e( 'Szar van a palacsintában!', 'eventikum' );
+		}
+	}
+endif;
+
+
+
 if ( ! function_exists( 'eve_foo' ) ) :
 	/**
 	 * Comment

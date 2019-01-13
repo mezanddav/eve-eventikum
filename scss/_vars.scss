@@ -1,11 +1,12 @@
 //== Colours
-$color__eve: #006BFD;
-$color__grey: #999;
-$color__dark: #043136;
+$color__eve: #88c446;
+$color__red: #E55555;
+$color__grey: #F4F6FA;
+$color__dark: #667C99;
 
 
 //== Fonts
-$dff: 'Montserrat', Arial, Helvetica, sans-serif;
+$dff: 'Montserrat', 'Trebuchet MS', Arial, Helvetica, sans-serif;
 $dlh: 1.15;
 
 $dffthin: 100;
@@ -23,7 +24,7 @@ $dffboldi: 700i;
 $dffblack: 900;
 $dffblacki: 900i;
 
-$sff: 'Bree Serif', serif;
+$sff: 'Bree Serif',Georgia, Garamond, Times, Courier, serif;
 $sffregular: 400;
 
 
@@ -31,8 +32,8 @@ $sffregular: 400;
 //== Other
 //** Usage: url( $template__baseurl + 'wp-content/themes/' + $template__name + '/img/statistic-bg.jpg')
 $template__name: 'eve-eventikum';
-// $template__baseurl: 'http://localhost/wordpress/';
-$template__baseurl: 'https://www.eventikum.ro/';
+$template__baseurl: 'http://localhost/wordpress/';
+// $template__baseurl: 'https://www.eventikum.ro/';
 
 
 //== Media queries breakpoints

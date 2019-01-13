@@ -49,7 +49,19 @@ get_header('tmp');
 				<?php endwhile; ?>
 			</main>
 		</div>
-		<div class="content-aside"><?php get_sidebar('events'); ?></div>
+		<div class="content-aside">
+		<aside class="evenp__sidebar">
+			<div class="evenp__sidebar-inner">
+				<div class="evenp__sidebar-until-the-event"><?php eve_get_event_date_diff( get_the_ID() );?></div>
+				<div class="evenp__sidebar-details">
+					<div class="evenp__sidebar-detail"></div>
+					<div class="evenp__sidebar-detail"></div>
+					<div class="evenp__sidebar-detail"></div>
+				</div>
+			</div>
+			<?php get_sidebar('events'); ?>
+		</aside>
+		</div>
 	</div>
 </div>
 <div class="evenp__gmap"></div>

@@ -40,6 +40,14 @@ img:not([src]) {
   box-shadow: 0px 3px 16px 0px rgba(225,231,240,1);
 }
 
+.i.error{
+  fill: $color__red;
+}
+
+.error{
+  color: $color__red;
+}
+
 // Left right
 .spread{
   @include clearfix();
