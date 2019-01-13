@@ -64,7 +64,7 @@ get_header('tmp');
 		</div>
 	</div>
 </div>
-<div class="evenp__gmap"></div>
+<div class="evenp__gmap"><?php eve_get_events_map( get_the_ID() ); ?></div>
 <?php
 
 get_footer('tmp');

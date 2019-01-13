@@ -264,6 +264,7 @@ add_action( 'admin_init', 'eve_general_section' );
 if( get_option('eve_html_compression') == 1 && get_option('eve_environment_details') == 1 ){
 	add_action( 'get_header', 'eve_html_compression_start' );
 }
+add_filter( 'acf/fields/google_map/api', 'eve_acf_google_map_api' );
 
 // Template actions
 add_action( 'wp_footer', 'eve_theme_icons', 10 );

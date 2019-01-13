@@ -182,6 +182,53 @@
   }
 }
 
+.map{
+  height: 500px;
+  position: relative;
+  z-index: 10;
+  margin: -100px 0 0 0;
+}
+
+.map__ctn{
+  position: inherit;
+  z-index: 80;
+}
+
+.map__link{
+  top: 150px;
+  left: 16px;
+  color: #407ACB;
+  font-size: 12px;
+  font-weight: $dffbold;
+  text-decoration: none;
+  position: absolute;
+}
+
+.map__overly{
+  position: absolute;
+  z-index: 40;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 60%;
+
+  background: -moz-linear-gradient(top, rgba(255,255,255,1) 0%, rgba(255,255,255,0) 100%);
+  background: -webkit-linear-gradient(top, rgba(255,255,255,1) 0%,rgba(255,255,255,0) 100%);
+  background: linear-gradient(to bottom, rgba(255,255,255,1) 0%,rgba(255,255,255,0) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#00ffffff',GradientType=0 );
+}
+
+.map__wrp{
+  position: absolute;
+  overflow: hidden;
+  z-index: 30;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: #fff;
+}
+
 @import "modules/events-sidebar";
 
 

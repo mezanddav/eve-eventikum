@@ -455,6 +455,41 @@ var eveLazyLoad = new LazyLoad({
   document.body.appendChild(wf);
 })();
 
+/**
+ * Google Map for footer
+ */
+function initMap(){
+  var center = [], container, pin;
+  container = document.getElementById( 'google-map' );
+  center.lat = parseFloat(container.getAttribute( 'data-gmap-lat' ));
+  center.lng = parseFloat(container.getAttribute( 'data-gmap-lng' ));
+  pin = container.getAttribute( 'data-pin-src' );
+
+	var map = new google.maps.Map(container, {
+		center: center,
+		zoom: 14,
+		mapTypeControl: false,
+    scaleControl: true,
+    streetViewControl: false,
+    rotateControl: true,
+    fullscreenControl: false,
+    navigationControl: true,
+    scrollwheel: false,
+    draggable: true,
+		scrollwheel: false,
+		styles: [{featureType:"water",elementType:"geometry",stylers:[{color:"#e9e9e9"},{lightness:17}]},{featureType:"landscape",elementType:"geometry",stylers:[{color:"#f5f5f5"},{lightness:20}]},{featureType:"road.highway",elementType:"geometry.fill",stylers:[{color:"#ffffff"},{lightness:17}]},{featureType:"road.highway",elementType:"geometry.stroke",stylers:[{color:"#ffffff"},{lightness:29},{weight:.2}]},{featureType:"road.arterial",elementType:"geometry",stylers:[{color:"#ffffff"},{lightness:18}]},{featureType:"road.local",elementType:"geometry",stylers:[{color:"#ffffff"},{lightness:16}]},{featureType:"poi",elementType:"geometry",stylers:[{color:"#f5f5f5"},{lightness:21}]},{featureType:"poi.park",elementType:"geometry",stylers:[{color:"#dedede"},{lightness:21}]},{elementType:"labels.text.stroke",stylers:[{visibility:"on"},{color:"#ffffff"},{lightness:16}]},{elementType:"labels.text.fill",stylers:[{saturation:36},{color:"#333333"},{lightness:40}]},{elementType:"labels.icon",stylers:[{visibility:"off"}]},{featureType:"transit",elementType:"geometry",stylers:[{color:"#f2f2f2"},{lightness:19}]},{featureType:"administrative",elementType:"geometry.fill",stylers:[{color:"#fefefe"},{lightness:20}]},{featureType:"administrative",elementType:"geometry.stroke",stylers:[{color:"#fefefe"},{lightness:17},{weight:1.2}]}]
+  });
+  
+  var df = new google.maps.Marker({
+		position : new google.maps.LatLng(center),
+		map : map,
+		icon: pin,
+		title: '<?php echo esc_html(get_bloginfo('name')); ?>'
+  });
+  
+  map.panBy(0, -80);
+}
+
 jQuery(document).ready(function($) {
   (function(){ console.log('<?php echo esc_html(get_bloginfo('name')); ?>'); })();
 
@@ -494,7 +529,18 @@ jQuery(document).ready(function($) {
     });
   }
   initPhotoSwipe('evenp-gallery');
-  
+
+  ( function() {
+		var container = document.getElementById( 'google-map' );
+		if ( !container ) { return; }
+
+		var wf = document.createElement('script');
+		wf.src = 'https://maps.googleapis.com/maps/api/js?key=AIzaSyDFi3XIrYAofAdNL80nf8Q1d8fehewzhqQ&callback=initMap';
+		wf.type = 'text/javascript';
+		wf.async = 'true';
+		var s = document.getElementsByTagName('script')[0];
+		s.parentNode.insertBefore(wf, s);
+	})();
 });
 </script>
 <?php
@@ -710,6 +756,20 @@ if ( ! function_exists( 'eve_admin_bar_render' ) ) :
   function eve_admin_bar_render() {
     global $wp_admin_bar;
     $wp_admin_bar->remove_menu('comments');
+  }
+endif;
+
+
+
+if ( ! function_exists( 'eve_acf_google_map_api' ) ) :
+	/**
+	 * Set Google map API key for ACF
+	 */
+  function eve_acf_google_map_api( $api )
+  {
+    // Email: eventikum.web@gmail.com
+    $api['key'] = 'AIzaSyDFi3XIrYAofAdNL80nf8Q1d8fehewzhqQ';
+    return $api;
   }
 endif;
 
