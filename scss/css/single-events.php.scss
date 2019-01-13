@@ -1,9 +1,6 @@
 @import "mixins";
 @import "vars";
 
-@import "mixins";
-@import "vars";
-
 .evenp__banner{
   position: relative;
   overflow: hidden;
@@ -106,18 +103,19 @@
   font-family: $sff;
   font-weight: $sffregular;
   color: #475669;
-  font-size: 34px;
+  font-size: 30px;
   margin: 0 0 20px 0;
+  line-height: 1.2;
 
   @media (min-width: $screen-sm-min){
-    font-size: 44px;
+    font-size: 40px;
   }
 }
 
 .evenp__subtitle{
   font-size: 20px;
   font-weight: $dffbold;
-  color: #475669;
+  color: #88c446;
 }
 
 .evenp__organizer{
@@ -128,6 +126,63 @@
   line-height: 1.6;
   font-size: 17px;
 }
+
+.evenp-gallery__wrp{
+  margin: 40px 0 0 0;
+}
+
+.evenp-gallery__title{
+  font-size: 12px;
+  color: #9DACC1;
+  text-transform: uppercase;
+  margin: 0 1px;
+}
+
+.gallery{
+  margin: 0 8px 0 0;
+
+  @media (min-width: $screen-sm-min){
+    margin: 0 15px 0 0;
+  }
+}
+
+.gallery__fig{
+  margin: 0;
+  padding: 0 0 100% 0;
+  position: relative;
+  overflow: hidden;
+  -webkit-border-radius: 8px;
+  border-radius: 8px;
+}
+
+.gallery_img{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.gallery__row{
+  @include clearfix();
+  margin: 15px -8px 0 -8px;
+
+  @media (min-width: $screen-sm-min){
+    margin: 15px -15px 0 -15px;
+  }
+}
+
+.gallery__col{
+  padding: 0 8px;
+  float: left;
+  width: 25%;
+
+  @media (min-width: $screen-sm-min){
+    padding: 0 15px;
+  }
+}
+
+@import "modules/events-sidebar";
 
 
 // Header ///////////////////
