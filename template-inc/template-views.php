@@ -436,7 +436,7 @@ if ( ! function_exists( 'eve_get_event_date_diff' ) ) :
 		if ( $event_date == $current_date ) {
 			_e( 'Az esemény ma van!', 'eventikum' );
 		}else if( $event_date > $current_date ){
-			printf( '%s nap a rendezvényig', $difference->d );
+			printf( '%s nap a rendezvényig', $difference->days );
 		}else if( $event_date < $current_date ){
 			_e( '<span class="error">Ez a rendezvény már lejárt.<span>', 'eventikum' );
 		}else{
