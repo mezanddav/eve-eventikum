@@ -104,10 +104,11 @@ img:not([src]) {
 }
 
 .content-aside{
+  margin: 30px 0 0 0;
 
   @media (min-width: $screen-md-min){
     float: right;
-    margin-left: -310px;
+    margin: 0 0 0 -310px;
     width: 310px;
   }
 }
