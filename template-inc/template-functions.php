@@ -530,7 +530,7 @@ jQuery(document).ready(function($) {
   }
   initPhotoSwipe('evenp-gallery');
 
-  ( function() {
+  (function() {
 		var container = document.getElementById( 'google-map' );
 		if ( !container ) { return; }
 

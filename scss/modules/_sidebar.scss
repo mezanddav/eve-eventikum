@@ -15,3 +15,52 @@
   margin: 0 0 8px 0;
   text-transform: uppercase;
 }
+
+.evenp__sidebar-detail{
+  line-height: 1.2;
+}
+
+.evenp__sidebar-detail-title{
+  font-size: 12px;
+  font-weight: $dffbold;
+  text-transform: uppercase;
+  color: #9DACC1;
+  margin: 0 0 5px 0;
+
+  &.mb-top{
+    margin: 20px 0 5px 0;
+  }
+}
+
+.evenp__sidebar-detail-meta{
+  font-size: 20px;
+  font-weight: $dffbold;
+  color: #667C99;
+
+  + .evenp__sidebar-detail-meta{
+    margin: 5px 0 0 0;
+  }
+}
+
+.evenp__sidebar-detail-note{
+  margin: 10px 0 0 0;
+  color: #667C99;
+  font-size: 14px;
+  line-height: 1.4;
+}
+
+.evenp__sidebar-detail-link{
+  color: #407ACB;
+  font-size: 12px;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.evenp__sidebar-detail-action{
+  margin: 10px 0 0 0;
+}
+
+.evenp__sidebar-detail-sep{
+  height: 0;
+  border-bottom: 1px dashed #DCE4EF;
+}

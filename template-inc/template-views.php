@@ -459,11 +459,40 @@ if ( ! function_exists( 'eve_get_events_map' ) ) :
 		if( !$lat && !$lng ){ return; }
 ?>
 <div class="map">
-	<div class="map__ctn ctn max">
-		<a class="map__link" href="<?php printf( 'http://www.google.com/maps/place/%s,%s', $lat, $lng ); ?>" target="_blank" rel="nofollow noopener"><?php _e('Google térkép →', 'eventikum'); ?></a>
-	</div>
+	<div class="map__ctn ctn max"><div class="map__link"><?php eve_get_google_map_link( $id ); ?></div></div>
 	<div class="map__overly"></div>
 	<div class="map__wrp" id="google-map" data-gmap-lat="<?php echo $lat; ?>" data-gmap-lng="<?php echo $lng; ?>" data-pin-src="<?php echo get_template_directory_uri(); ?>/img/gmap-pin.png"></div>
+</div>
+<?php
+	}
+endif;
+
+
+
+if ( ! function_exists( 'eve_get_google_map_link' ) ) :
+	/**
+	 * Print google map link
+	 */
+	function eve_get_google_map_link( $id )
+	{
+		$lat = get_field( 'eventikum_google_terkep_helyszin', $id )['lat'];
+		$lng = get_field( 'eventikum_google_terkep_helyszin', $id )['lng'];
+
+		?><a class="btn-link" href="<?php printf( 'http://www.google.com/maps/place/%s,%s', $lat, $lng ); ?>" target="_blank" rel="nofollow noopener"><?php _e('Google térkép →', 'eventikum'); ?></a><?php 
+	}
+endif;
+
+
+
+if ( ! function_exists( 'eve_get_event_tickets' ) ) :
+	/**
+	 * Print tickets part
+	 */
+	function eve_get_event_tickets( $id )
+	{
+?>
+<div class="tickets">
+
 </div>
 <?php
 	}

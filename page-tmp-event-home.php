@@ -54,11 +54,29 @@ get_header('tmp');
 			<div class="evenp__sidebar-inner">
 				<div class="evenp__sidebar-until-the-event"><?php eve_get_event_date_diff( get_the_ID() );?></div>
 				<div class="evenp__sidebar-details">
-					<div class="evenp__sidebar-detail"></div>
-					<div class="evenp__sidebar-detail"></div>
-					<div class="evenp__sidebar-detail"></div>
+					<div class="evenp__sidebar-detail">
+						<div class="evenp__sidebar-detail-title">IDŐPONT</div>
+						<div class="evenp__sidebar-detail-meta">2018. február 25</div>
+						<div class="evenp__sidebar-detail-meta">19:00</div>
+					</div>
+					<div class="evenp__sidebar-detail">
+						<div class="evenp__sidebar-detail-title mb-top">HELYSZÍN</div>
+						<div class="evenp__sidebar-detail-meta">Marosvásárhely</div>
+						<div class="evenp__sidebar-detail-note">
+							Kultúrpalota, nagyterem <br>
+							Győzelem tér, 1. Szám <br>
+							540052 Marosvásárhely
+						</div>
+						<div class="evenp__sidebar-detail-action"><?php eve_get_google_map_link( get_the_ID() ); ?></div>
+					</div>
+				</div>
+				<div class="evenp__sidebar-detail-sep"></div>
+				<div class="evenp__sidebar-details">
+					<div class="evenp__sidebar-detail-title">JEGY ÁRA</div>
+					<div class="evenp__sidebar-detail-meta">25 RON</div>
 				</div>
 			</div>
+			<div><?php eve_get_event_tickets( get_the_ID() ); ?></div>
 			<?php get_sidebar('events'); ?>
 		</aside>
 		</div>
