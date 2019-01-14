@@ -64,3 +64,33 @@
   height: 0;
   border-bottom: 1px dashed #DCE4EF;
 }
+
+.tickets{}
+
+.tickets__title{
+  text-align: center;
+  color: #667C99;
+  font-weight: $dffbold;
+  font-size: 12px;
+  text-transform: uppercase;
+  margin: 0 0 8px 0;
+}
+
+.tickets__btns{}
+
+.tickets__btn{
+
+  + .tickets__btn{
+    margin: 15px 0 0 0;
+  }
+}
+
+.tickets__note{
+  margin: 20px 0 0 0;
+  @include clearfix();
+}
+
+.tickets__note{
+  line-height: 1.5;
+  color: #667C99;
+}

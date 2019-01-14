@@ -76,7 +76,7 @@ get_header('tmp');
 					<div class="evenp__sidebar-detail-meta">25 RON</div>
 				</div>
 			</div>
-			<div><?php eve_get_event_tickets( get_the_ID() ); ?></div>
+			<div class="evenp__sidebar-tickets"><?php eve_get_event_tickets( get_the_ID() ); ?></div>
 			<?php get_sidebar('events'); ?>
 		</aside>
 		</div>

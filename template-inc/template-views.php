@@ -492,7 +492,22 @@ if ( ! function_exists( 'eve_get_event_tickets' ) ) :
 	{
 ?>
 <div class="tickets">
+	<div class="tickets__title">JEGYEK</div>
+	<div class="tickets__btns">
+		<div class="tickets__btn"><a class="btn btn-yellow btn-block" href="#0">BILETMASTER</a></div>
+		<div class="tickets__btn"><a class="btn btn-yellow btn-block" href="#0">EVENTIM</a></div>
+	</div>
+	<div class="tickets__note">
+Továbbá jegyeket helyszinen lehet venni vagy a Kultúrpalota jegypénztárjában:
 
+Hétfő: Zárva
+Kedd-Péntek: 09:00 - 15:30
+Szombat-vasárnap: 09:00 - 14:00
+
+Telefonszám: 0266-366.366
+
+Valamint előadás előtt a helyszínen.
+	</div>
 </div>
 <?php
 	}
