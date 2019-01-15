@@ -55,25 +55,51 @@ get_header('tmp');
 				<div class="evenp__sidebar-until-the-event"><?php eve_get_event_date_diff( get_the_ID() );?></div>
 				<div class="evenp__sidebar-details">
 					<div class="evenp__sidebar-detail">
-						<div class="evenp__sidebar-detail-title">IDŐPONT</div>
-						<div class="evenp__sidebar-detail-meta">2018. február 25</div>
-						<div class="evenp__sidebar-detail-meta">19:00</div>
+						<div class="evenp__sidebar-detail-title"><?php _e( 'IDŐPONT', 'eventikum' ); ?></div>
+						<?php
+
+						$date = get_field( 'eventikum_datum', get_the_ID() );
+						if( $date ){
+							$date = ucfirst(date_i18n( get_option( 'date_format' ), strtotime( $date ) ));
+							printf( '<div class="evenp__sidebar-detail-meta">%s</div>', $date ); } 
+						
+						$time = get_field( 'eventikum_idopont', get_the_ID() );
+						if( $time ){
+							printf( '<div class="evenp__sidebar-detail-meta">%s</div>', $time ); }
+						
+						?>
 					</div>
 					<div class="evenp__sidebar-detail">
-						<div class="evenp__sidebar-detail-title mb-top">HELYSZÍN</div>
-						<div class="evenp__sidebar-detail-meta">Marosvásárhely</div>
-						<div class="evenp__sidebar-detail-note">
-							Kultúrpalota, nagyterem <br>
-							Győzelem tér, 1. Szám <br>
-							540052 Marosvásárhely
-						</div>
+						<div class="evenp__sidebar-detail-title mb-top"><?php _e( 'HELYSZÍN', 'eventikum' ); ?></div>
+						<?php 
+						
+						$location_city = get_field( 'eventikum_varos', get_the_ID() );
+						if( $location_city ){
+							printf( '<div class="evenp__sidebar-detail-meta">%s</div>', $location_city ); } 
+
+						$location_note = get_field( 'eventikum_helyszin', get_the_ID() );
+						if( $location_note ){
+							printf( '<div class="evenp__sidebar-detail-note">%s</div>', $location_note ); } 
+
+						?>
 						<div class="evenp__sidebar-detail-action"><?php eve_get_google_map_link( get_the_ID() ); ?></div>
 					</div>
 				</div>
 				<div class="evenp__sidebar-detail-sep"></div>
 				<div class="evenp__sidebar-details">
-					<div class="evenp__sidebar-detail-title">JEGY ÁRA</div>
-					<div class="evenp__sidebar-detail-meta">25 RON</div>
+					<div class="evenp__sidebar-detail-title"><?php _e( 'JEGY ÁRA', 'eventikum' ); ?></div>
+					<?php 
+					
+					$price = get_field( 'eventikum_jegy_ara', get_the_ID() );
+					$price_type = get_field_object( 'eventikum_penznem', get_the_ID() );
+					
+					if( $price && $price_type ){
+						$selected_price_type = $price_type['value'];
+						$price_type = $price_type['choices'][ $selected_price_type ];
+
+						printf( '<div class="evenp__sidebar-detail-meta">%s %s</div>', $price, $price_type ); } 
+					
+					?>
 				</div>
 			</div>
 			<div class="evenp__sidebar-tickets"><?php eve_get_event_tickets( get_the_ID() ); ?></div>

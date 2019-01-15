@@ -43,10 +43,15 @@
 }
 
 .evenp__sidebar-detail-note{
+  @include clearfix();
   margin: 10px 0 0 0;
   color: #667C99;
   font-size: 14px;
   line-height: 1.4;
+
+  p{
+    margin: 0 0 2px 0;
+  }
 }
 
 .evenp__sidebar-detail-link{
@@ -88,9 +93,10 @@
 .tickets__note{
   margin: 20px 0 0 0;
   @include clearfix();
-}
-
-.tickets__note{
   line-height: 1.5;
   color: #667C99;
+
+  p{
+    margin: 0 0 2px 0;
+  }
 }
