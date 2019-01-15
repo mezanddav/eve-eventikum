@@ -19,6 +19,8 @@ get_header('tmp');
 
 ?>
 <div class="ctn max">
+	<?php
+	if( has_post_thumbnail( get_the_ID() ) ): ?>
 	<div class="evenp__banner sh<?php if(wp_is_mobile()){ echo ' mobile'; } ?>">
 		<div class="evenp__banner-presenter<?php if(wp_is_mobile()){ echo ' mobile'; } ?>"><?php eve_get_profile( 'presenter', get_the_ID() ); ?></div>
 		<div class="evenp__banner-presenter-bg"></div>
@@ -28,6 +30,7 @@ get_header('tmp');
 		<div class="evenp__banner-psn desktop"><img class="evenp__banner-img loadlzly" src="<?php echo get_the_post_thumbnail_url( get_the_ID(), 'tree-one-events-thumb' ); ?>" data-src="<?php echo get_the_post_thumbnail_url( get_the_ID(), 'tree-one-events-full' ); ?>"></div>
 		<?php endif; ?>
 	</div>
+	<?php endif; ?>
 	<div class="content-area">
 		<div class="content-main with-sidebar">
 			<main class="evenp__main">
