@@ -18,7 +18,7 @@ get_header();
 
 			<header class="page-header">
 				<?php
-				printf( '<h1 class="page-title">%s</h1>', 'Események' );
+				printf( '<h1 class="page-title">%s</h1>', 'Eseményeink' );
 				the_breadcrumb();
 				?>
 			</header><!-- .page-header -->

@@ -60,24 +60,6 @@ if ( ! function_exists( 'eve_setup' ) ) :
 		) );
 
 
-		// Set up the WordPress core custom background feature.
-		add_theme_support( 'custom-background', apply_filters( 'eve_custom_background_args', array(
-			'default-color' => 'ffffff',
-			'default-image' => '',
-		) ) );
-
-		/**
-		 * Add support for core custom logo.
-		 *
-		 * @link https://codex.wordpress.org/Theme_Logo
-		 */
-		add_theme_support( 'custom-logo', array(
-			'height'      => 250,
-			'width'       => 250,
-			'flex-width'  => true,
-			'flex-height' => true,
-		) );
-
 		## Image sizes
 
 		# 1:1 / 10x10 Thumbnail size for: Events, Organizers, Presenters, Gallery

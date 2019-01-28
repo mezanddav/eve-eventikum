@@ -41,11 +41,10 @@ get_header();
 		$recent_posts = new WP_Query( $args );
 		
 		if ( $recent_posts->have_posts() ) : ?>
-		
-
+	
 			<header class="page-header">
 				<?php
-				printf( '<h1 class="page-title">%s</h1>', 'Események' );
+				printf( '<h1 class="page-title">%s</h1>', 'Eseményeink' );
 				the_breadcrumb();
 				?>
 			</header>
