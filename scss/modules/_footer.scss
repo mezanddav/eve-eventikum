@@ -1,9 +1,23 @@
 .site-footer{
   background: #95C159;
-  padding: 100px 0;
+  padding: 100px 0 80px 0;
   text-align: center;
+}
 
-  .i{
-    fill: #fff;
-  }
+.site-footer__imppr{
+  margin: 40px 0 0 0;
+}
+
+.site-footer__imppr-uri{
+  font-weight: $dffbold;
+  font-size: 12px;
+  color: #fff;
+  text-decoration: none;
+  color: lighten(#95C159, 20%);
+  
+  &:visited{
+    color: lighten(#95C159, 20%); }
+
+  &:hover{
+    color: #fff; }
 }

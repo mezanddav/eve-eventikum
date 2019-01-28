@@ -455,9 +455,6 @@ var eveLazyLoad = new LazyLoad({
   document.body.appendChild(wf);
 })();
 
-/**
- * Google Map for footer
- */
 function initMap(){
   var center = [], container, pin;
   container = document.getElementById( 'google-map' );
