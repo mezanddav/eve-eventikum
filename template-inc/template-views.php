@@ -453,10 +453,13 @@ if ( ! function_exists( 'eve_get_events_map' ) ) :
 	 */
 	function eve_get_events_map( $id )
 	{
-		$lat = get_field( 'eventikum_google_terkep_helyszin', $id )['lat'];
-		$lng = get_field( 'eventikum_google_terkep_helyszin', $id )['lng'];
+		$lat = get_field( 'eventikum_google_terkep_helyszin', $id );
+		$lng = get_field( 'eventikum_google_terkep_helyszin', $id );
 
 		if( !$lat && !$lng ){ return; }
+
+		$lat = $lat['lat'];
+		$lng = $lng['lng'];
 ?>
 <div class="map">
 	<div class="map__ctn ctn max"><div class="map__link"><?php eve_get_google_map_link( $id ); ?></div></div>
@@ -475,8 +478,13 @@ if ( ! function_exists( 'eve_get_google_map_link' ) ) :
 	 */
 	function eve_get_google_map_link( $id )
 	{
-		$lat = get_field( 'eventikum_google_terkep_helyszin', $id )['lat'];
-		$lng = get_field( 'eventikum_google_terkep_helyszin', $id )['lng'];
+		$lat = get_field( 'eventikum_google_terkep_helyszin', $id );
+		$lng = get_field( 'eventikum_google_terkep_helyszin', $id );
+
+		if( !$lat && !$lng ){ return; }
+
+		$lat = $lat['lat'];
+		$lng = $lng['lng'];
 
 		?><a class="btn-link" href="<?php printf( 'http://www.google.com/maps/place/%s,%s', $lat, $lng ); ?>" target="_blank" rel="nofollow noopener"><?php _e('Google térkép →', 'eventikum'); ?></a><?php 
 	}

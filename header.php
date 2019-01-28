@@ -29,16 +29,23 @@
 		<div class="brand">
 			<a class="brand-uri fr" href="<?php echo get_site_url(); ?>"><img class="brand-img" src="<?php echo get_template_directory_uri(); ?>/img/eventikum-logo.png" alt="<?php echo get_bloginfo('name'); ?>"></a>
 		</div>
-		<nav id="site-navigation" class="main-navigation">
-			<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><span></span><span></span><span></span></button>
-			<?php
-			wp_nav_menu( array(
-				'theme_location' => 'header-menu',
-				'menu_id'        => 'header-menu',
-				'container'      => false
-			) );
-			?>
-		</nav>
+		<div class="site-header__action">
+			<nav id="site-navigation" class="site-header__nav main-navigation">
+				<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><span></span><span></span><span></span></button>
+				<?php
+				wp_nav_menu( array(
+					'theme_location' => 'header-menu',
+					'menu_id'        => 'header-menu',
+					'container'      => false
+				) );
+				?>
+			</nav>
+			<div class="site-header__socials">
+				<div class="site-header__social"><a href="https://www.facebook.com/eventikum.ro/" target="_blank"><svg class="i i-facebook" width="14" height="14" title="Delta fitness"><use xlink="http://www.w3.org/1999/xlink" xlink:href="#i-facebook" href="#i-facebook"></use></svg></a></div>
+				<div class="site-header__social"><a href="https://www.instagram.com/eventikum.ro/" target="_blank"><svg class="i i-instagram" width="14" height="14" title="Delta fitness"><use xlink="http://www.w3.org/1999/xlink" xlink:href="#i-instagram" href="#i-instagram"></use></svg></a></div>
+				<div class="site-header__social"><a href="https://m.me/eventikum.ro" target="_blank"><svg class="i i-messenger" width="14" height="14" title="Delta fitness"><use xlink="http://www.w3.org/1999/xlink" xlink:href="#i-messenger" href="#i-messenger"></use></svg></a></div>
+			</div>
+		</div>
 	</div>
 </header>
 <div class="site-content">

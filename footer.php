@@ -13,21 +13,7 @@
 
 </div>
 <footer class="site-footer">
-	<div class="ctn max">
-		<div class="site-info">
-			<a href="<?php echo esc_url( __( 'https://wordpress.org/', 'eve' ) ); ?>">
-				<?php
-				/* translators: %s: CMS name, i.e. WordPress. */
-				printf( esc_html__( 'Proudly powered by %s', 'eve' ), 'WordPress' );
-				?>
-			</a>
-			<span class="sep"> | </span>
-				<?php
-				/* translators: 1: Theme name, 2: Theme author. */
-				printf( esc_html__( 'Theme: %1$s by %2$s.', 'eve' ), 'eve', '<a href="https://www.progresseve.uk/">Progresseve Ltd.</a>' );
-				?>
-		</div><!-- .site-info -->
-	</div>
+  <img class="site-footer__logo" src="<?php echo get_template_directory_uri(); ?>/img/eventikum-white-logo.png" alt="<?php echo get_bloginfo('name'); ?>">
 </footer>
 </div>
 <?php wp_footer(); ?>

@@ -209,7 +209,7 @@ function eve_events_cpt() {
     'set_featured_image'    => _x( 'Esemény kép beállítása', 'Overrides the “Set featured image” phrase for this post type. Added in 4.3', 'eve' ),
     'remove_featured_image' => _x( 'Remove cover image', 'Overrides the “Remove featured image” phrase for this post type. Added in 4.3', 'eve' ),
     'use_featured_image'    => _x( 'Use as cover image', 'Overrides the “Use as featured image” phrase for this post type. Added in 4.3', 'eve' ),
-    'archives'              => _x( 'Esemény Események', 'The post type archive label used in nav menus. Default “Post Események. Added in 4.4', 'eve' ),
+    'archives'              => _x( 'Események listázás', 'The post type archive label used in nav menus. Default “Post Események. Added in 4.4', 'eve' ),
     'insert_into_item'      => _x( 'Insert into judet', 'Overrides the “Insert into post”/”Insert into page” phrase (used when inserting media into a post). Added in 4.4', 'eve' ),
     'uploaded_to_this_item' => _x( 'Uploaded to this judet', 'Overrides the “Uploaded to this post”/”Uploaded to this page” phrase (used when viewing media attached to a post). Added in 4.4', 'eve' ),
     'filter_items_list'     => _x( 'Filter Események list', 'Screen reader text for the filter links heading on the post type listing screen. Default “Filter posts list”/”Filter pages list”. Added in 4.4', 'eve' ),
