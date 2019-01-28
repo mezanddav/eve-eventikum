@@ -95,11 +95,11 @@ $header__height: 24px;
   ul{
     list-style: none;
     margin: 0;
-    padding: 0;
-    @include flexbox();
-
-    @media (max-width: $screen-sm-max){
-      padding: 8px 0 8px 0;
+    padding: 8px 0 8px 0;
+    
+    @media (min-width: $screen-sm-min){
+      @include flexbox();
+      padding: 0;
     }
   }
 
@@ -201,6 +201,11 @@ $header__height: 24px;
   float: right;
   align-items: center;
   justify-content: right;
+  
+  @media (max-width: $screen-sm-max){
+    -webkit-flex-direction: row-reverse;
+    flex-direction: row-reverse;
+  }
 }
 
 .site-header__nav{
@@ -212,9 +217,16 @@ $header__height: 24px;
   @include flexbox();
   align-items: center;
   justify-content: right;
-  padding: 0 0 0 14px;
-  margin: 0 0 0 10px;
-  border-left: 1px solid lighten($color__grey, 40%);
+  padding: 0 14px 0 0;
+  margin: 0 14px 0 0;
+  border-right: 1px solid lighten($color__grey, 40%);
+
+  @media (min-width: $screen-sm-min){
+    padding: 0 0 0 14px;
+    margin: 0 0 0 10px;
+    border-right: none;
+    border-left: 1px solid lighten($color__grey, 40%);
+  }
 }
 
 .site-header__social{
