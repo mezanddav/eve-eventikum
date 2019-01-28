@@ -4,6 +4,7 @@
   text-decoration: none;
   color: $color__dark;
   font-weight: $dffbold;
+  text-align: center;
   font-size: 14px;
   -webkit-border-radius: 4px;
   border-radius: 4px;
@@ -15,10 +16,15 @@
     border: 2px solid transparent;
     background: transparent;
   }
-}
 
-.btn-block{
-  display: block;
+  &.block{
+    display: block;
+  }
+
+  &.small{
+    font-size: 12px;
+    padding: 6px 12px;
+  }
 }
 
 .btn-facebook{
@@ -39,8 +45,10 @@
   background: $color__eve;
 }
 
-.btn-small{
-  padding: 6px 12px;
+.btn-light{
+  color: $color__dark;
+  border-color: #E1E7F0;
+  background: #E1E7F0;
 }
 
 .btn-link{

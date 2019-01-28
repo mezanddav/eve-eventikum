@@ -25,6 +25,10 @@ img:not([src]) {
   overflow: hidden;
 }
 
+.site-content{
+  padding: 20px 0 20px 0;
+}
+
 .sh{
   -webkit-box-shadow: 0px 3px 16px 0px rgba(225,231,240,1);
   -moz-box-shadow: 0px 3px 16px 0px rgba(225,231,240,1);
@@ -39,17 +43,31 @@ img:not([src]) {
   color: $color__red;
 }
 
-// Left right
-.spread{
+.article__row{
   @include clearfix();
+  margin: 0 -15px;
+
+  @media (min-width: $screen-sm-min){
+    &.row-of-3{
+      .article__column{
+        width: 33.333%;
+      }
+    }
+  
+    &.row-of-2{
+      .article__column{
+        width: 50%;
+      }
+    }
+  }
 }
 
-.spread__left{
-  float: left;
-}
+.article__column{
+  padding: 0 15px;
 
-.spread__right{
-  float: right;
+  @media (min-width: $screen-sm-min){
+    float: left;
+  }
 }
 
 // Container
@@ -102,4 +120,29 @@ img:not([src]) {
     margin: 0 0 0 -310px;
     width: 310px;
   }
+}
+
+.entry-title,
+.page-title{
+  margin: 0 0 20px 0;
+  font-family: $sff;
+  font-size: 30px;
+  color: $color__dark;
+
+  + .breadcrumbs{
+    margin: -5px 0 0 0;
+  }
+}
+
+.post-thumbnail{
+  display: block;
+
+  img{
+    width: 100%;
+    height: auto;
+  }
+}
+
+.page-header{
+  margin: 0 0 15px 0;
 }
