@@ -18,7 +18,7 @@
 <link rel="dns-prefetch" href="//www.googletagmanager.com">
 <link rel="dns-prefetch" href="//ajax.googleapis.com">
 <?php wp_head(); ?>
-<meta name="theme-color" content="#0D494E">
+<meta name="theme-color" content="#475669">
 <link rel="icon" sizes="192x192" href="<?php echo get_template_directory_uri(); ?>/img/eve-highres.png">
 </head>
 <body <?php body_class(); ?>>
