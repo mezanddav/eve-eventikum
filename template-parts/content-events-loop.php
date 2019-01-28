@@ -11,7 +11,7 @@
 <div class="article__column">
 	<article id="post-<?php the_ID(); ?>" <?php post_class('article__events'); ?>>
 		<!-- <div class="article__img">kép</div> -->
-		<?php the_title( '<h2 class="entry-title">', '</h2>' ); ?>
+		<?php the_title( '<h2 class="article__event-title">', '</h2>' ); ?>
 		<div class="article__presenter"><?php eve_get_profile( 'presenter', get_the_ID() ); ?></div>
 		<div class="article__details">
 			<div class="article__details-left"></div>
