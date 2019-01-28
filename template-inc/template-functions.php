@@ -483,7 +483,6 @@ function initMap(){
 		icon: pin,
 		title: '<?php echo esc_html(get_bloginfo('name')); ?>'
   });
-  
   map.panBy(0, -80);
 }
 
@@ -494,7 +493,7 @@ jQuery(document).ready(function($) {
 
   var initPhotoSwipe = function( gallerySelector ) {
     container = document.getElementById( gallerySelector );
-    if( !container ) { return; }
+    if( !container ) { return; };
     
     var items = [];
     $('.gallery__fig').each(function(index, value){
@@ -509,14 +508,13 @@ jQuery(document).ready(function($) {
 
     function openPhotoSwipe(index){
       var pswp = document.querySelectorAll('.pswp')[0];
-      var options = {
-        index: index };
+      var options = { index: index };
 
       if (typeof PhotoSwipe === 'function'){
         gallery = new PhotoSwipe( pswp, PhotoSwipeUI_Default, items, options );
         gallery.init();
-      }
-    }
+      };
+    };
 
     $('.gallery__fig').each(function(index, value){
       $(this).on( 'click', function(e){
@@ -524,12 +522,12 @@ jQuery(document).ready(function($) {
         e.preventDefault ? e.preventDefault() : e.returnValue = false;
         openPhotoSwipe( index ); });
     });
-  }
+  };
   initPhotoSwipe('evenp-gallery');
 
   (function() {
 		var container = document.getElementById( 'google-map' );
-		if ( !container ) { return; }
+		if ( !container ) { return; };
 
 		var wf = document.createElement('script');
 		wf.src = 'https://maps.googleapis.com/maps/api/js?key=AIzaSyDFi3XIrYAofAdNL80nf8Q1d8fehewzhqQ&callback=initMap';
