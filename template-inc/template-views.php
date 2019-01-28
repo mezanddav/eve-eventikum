@@ -505,15 +505,15 @@ if ( ! function_exists( 'eve_get_event_tickets' ) ) :
 
 	$ticket_facebook = get_field( 'eventikum_facebook_esemeny_url', $id );
 	if( $ticket_facebook ){
-		printf( '<div class="tickets__btn"><a class="btn btn-facebook btn-block" href="%s" target="%s" title="%s" rel="nofollow noopener">%s</a></div>', $ticket_facebook['url'], $ticket_facebook['target'], $ticket_facebook['title'], $ticket_facebook['title'] ); }
+		printf( '<div class="tickets__btn"><a class="btn btn-facebook block" href="%s" target="%s" title="%s" rel="nofollow noopener">%s</a></div>', $ticket_facebook['url'], $ticket_facebook['target'], $ticket_facebook['title'], $ticket_facebook['title'] ); }
 
 	$ticket_biletmaster = get_field( 'eventikum_biletmaster_url', $id );
 	if( $ticket_biletmaster ){
-		printf( '<div class="tickets__btn"><a class="btn btn-yellow btn-block" href="%s" target="%s" title="%s" rel="nofollow noopener">%s</a></div>', $ticket_biletmaster['url'], $ticket_biletmaster['target'], $ticket_biletmaster['title'], $ticket_biletmaster['title'] ); }
+		printf( '<div class="tickets__btn"><a class="btn btn-yellow block" href="%s" target="%s" title="%s" rel="nofollow noopener">%s</a></div>', $ticket_biletmaster['url'], $ticket_biletmaster['target'], $ticket_biletmaster['title'], $ticket_biletmaster['title'] ); }
 
 	$ticket_eventim = get_field( 'eventikum_eventim_url', $id );
 	if( $ticket_eventim ){
-		printf( '<div class="tickets__btn"><a class="btn btn-yellow btn-block" href="%s" target="%s" title="%s" rel="nofollow noopener">%s</a></div>', $ticket_eventim['url'], $ticket_eventim['target'], $ticket_eventim['title'], $ticket_eventim['title'] ); }
+		printf( '<div class="tickets__btn"><a class="btn btn-yellow block" href="%s" target="%s" title="%s" rel="nofollow noopener">%s</a></div>', $ticket_eventim['url'], $ticket_eventim['target'], $ticket_eventim['title'], $ticket_eventim['title'] ); }
 	
 	?></div>
 	<div class="tickets__note"><?php 
