@@ -10,7 +10,7 @@
   border-radius: 8px;
 
   &.mobile{
-    margin: 0 -5px 20px -5px;
+    margin: -15px -5px 20px -5px;
   }
 }
 
@@ -184,6 +184,10 @@
 
 .evenp__sidebar-tickets{
   margin: 0 0 40px 0;
+}
+
+.evenp__gmap{
+  margin: 0 0 -20px 0;
 }
 
 .map{
