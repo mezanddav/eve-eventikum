@@ -520,7 +520,7 @@ if ( ! function_exists( 'eve_get_event_tickets' ) ) :
 			<?php endif; ?>
 		</div>
 		<?php endif; ?>
-		<?php $ticket_two = get_field( 'eventikum_elso_jegy_forras', $id );
+		<?php $ticket_two = get_field( 'eventikum_masodik_jegy_forras', $id );
 		if( $ticket_two ): ?>
 		<div class="tickets__btn-block">
 			<?php if( !empty($ticket_two['eventikum_jegy_hivatkozas']) ): ?>
