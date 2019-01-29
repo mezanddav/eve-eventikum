@@ -95,6 +95,12 @@ get_header();
 				</div>
 			</div>
 			<div class="evenp__sidebar-tickets"><?php eve_get_event_tickets( get_the_ID() ); ?></div>
+			<div class="evenp__sidebar-facebook"><?php 
+				$ticket_facebook = get_field( 'eventikum_facebook_esemeny_url', $id );
+				if( $ticket_facebook ){
+					printf( '<a class="btn btn-facebook block" href="%s" target="%s" title="%s" rel="nofollow noopener">%s</a>', $ticket_facebook['url'], $ticket_facebook['target'], $ticket_facebook['title'], $ticket_facebook['title'] );
+				}
+			?></div>
 			<?php get_sidebar('events'); ?>
 		</aside>
 		</div>
