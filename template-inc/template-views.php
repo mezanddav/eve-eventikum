@@ -506,17 +506,34 @@ if ( ! function_exists( 'eve_get_event_tickets' ) ) :
 	if( $ticket_note ){
 		printf( '<div class="tickets__note">%s</div>', $ticket_note ); } 
 	?>
-	<div class="tickets__btns"><?php 
-
-	$ticket_one = get_field( 'eventikum_elso_jegy_forras', $id );
-	if( $ticket_one ){
-		printf( '<div class="tickets__btn-block"><div class="tickets__btn"><a class="btn btn-yellow block" href="%s" target="%s" title="%s" rel="nofollow noopener"><div>%s</div><div>%s</div></a></div><div class="tickets__btn-note">%s</div></div>', $ticket_one['eventikum_jegy_hivatkozas']['url'], $ticket_one['eventikum_jegy_hivatkozas']['target'], $ticket_one['eventikum_jegy_hivatkozas']['title'], $ticket_one['eventikum_jegy_hivatkozas']['title'], $ticket_one['eventikum_jegy_gomb_leiras'], $ticket_one['eventikum_jegy_leiras'] ); }
-
-	// $ticket_two = get_field( 'eventikum_masodik_jegy_forras', $id );
-	// if( $ticket_two ){
-	// 	printf( '<div class="tickets__btn-block"><div class="tickets__btn"><a class="btn btn-yellow block" href="%s" target="%s" title="%s" rel="nofollow noopener"><div>%s</div><div>%s</div></a></div><div class="tickets__btn-note">%s</div></div>', $ticket_two['eventikum_jegy_hivatkozas']['url'], $ticket_two['eventikum_jegy_hivatkozas']['target'], $ticket_two['eventikum_jegy_hivatkozas']['title'], $ticket_two['eventikum_jegy_hivatkozas']['title'], $ticket_two['eventikum_jegy_gomb_leiras'], $ticket_two['eventikum_jegy_leiras'] ); }
-
-	?></div>
+	<div class="tickets__btns">
+		<?php $ticket_one = get_field( 'eventikum_elso_jegy_forras', $id );
+		if( $ticket_one ): ?>
+		<div class="tickets__btn-block">
+			<?php if( !empty($ticket_one['eventikum_jegy_hivatkozas']) ): ?>
+			<div class="tickets__btn">
+				<a class="btn btn-yellow block" href="<?php echo $ticket_one['eventikum_jegy_hivatkozas']['url']; ?>" target="<?php echo $ticket_one['eventikum_jegy_hivatkozas']['target']; ?>" title="<?php echo $ticket_one['eventikum_jegy_hivatkozas']['title']; ?>" rel="nofollow noopener"><div><?php echo $ticket_one['eventikum_jegy_hivatkozas']['title']; ?></div><?php if(!empty($ticket_one['eventikum_jegy_gomb_leiras'])): ?><div><?php echo $ticket_one['eventikum_jegy_gomb_leiras']; ?></div><?php endif; ?></a>
+			</div>
+			<?php endif; ?>
+			<?php if( !empty($ticket_one['eventikum_jegy_leiras']) ): ?>
+			<div class="tickets__btn-note"><?php echo $ticket_one['eventikum_jegy_leiras']; ?></div>
+			<?php endif; ?>
+		</div>
+		<?php endif; ?>
+		<?php $ticket_two = get_field( 'eventikum_elso_jegy_forras', $id );
+		if( $ticket_two ): ?>
+		<div class="tickets__btn-block">
+			<?php if( !empty($ticket_two['eventikum_jegy_hivatkozas']) ): ?>
+			<div class="tickets__btn">
+				<a class="btn btn-yellow block" href="<?php echo $ticket_two['eventikum_jegy_hivatkozas']['url']; ?>" target="<?php echo $ticket_two['eventikum_jegy_hivatkozas']['target']; ?>" title="<?php echo $ticket_two['eventikum_jegy_hivatkozas']['title']; ?>" rel="nofollow noopener"><div><?php echo $ticket_two['eventikum_jegy_hivatkozas']['title']; ?></div><?php if(!empty($ticket_two['eventikum_jegy_gomb_leiras'])): ?><div><?php echo $ticket_two['eventikum_jegy_gomb_leiras']; ?></div><?php endif; ?></a>
+			</div>
+			<?php endif; ?>
+			<?php if( !empty($ticket_two['eventikum_jegy_leiras']) ): ?>
+			<div class="tickets__btn-note"><?php echo $ticket_two['eventikum_jegy_leiras']; ?></div>
+			<?php endif; ?>
+		</div>
+		<?php endif; ?>
+	</div>
 </div>
 <?php
 	}
