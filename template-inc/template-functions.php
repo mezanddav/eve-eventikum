@@ -535,7 +535,14 @@ jQuery(document).ready(function($) {
 		wf.async = 'true';
 		var s = document.getElementsByTagName('script')[0];
 		s.parentNode.insertBefore(wf, s);
-	})();
+  })();
+  
+  (function() {
+    $('#evenp__content-action').click(function() {
+      $($(this).data('fade')).hide();
+      $($(this).data('ctn')).css('height', 'auto');
+	  });
+  })();
 });
 </script>
 <?php

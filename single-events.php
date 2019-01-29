@@ -35,7 +35,14 @@ get_header();
 				<div class="evenp__title"><?php the_title(); ?></div>
 				<div class="evenp__subtitle"><?php echo get_field( 'eventikum_esemeny_eloadas_cime', get_the_ID() ); ?></div>
 				<div class="evenp__organizer"><?php eve_get_profile( 'organizer', get_the_ID() ); ?></div>
-				<div class="evenp__content"><?php the_content(); ?></div>
+				<?php if( wp_is_mobile() ): ?>
+					<div id="evenp__content" class="evenp__content mobile">
+						<div id="evenp__content-fade" class="evenp__content-action"><a id="evenp__content-action" data-ctn="#evenp__content" data-fade="#evenp__content-fade" class="btn btn-primary small block sh"><?php _e('Teljes leírás mutatása', 'eve'); ?></a></div>
+						<div class="evenp__content-inner"><?php the_content(); ?></div>
+					</div>
+				<?php else: ?>
+					<div class="evenp__content desktop"><?php the_content(); ?></div>
+				<?php endif; ?>
 				<div class="evenp__gallery"><?php eve_get_gallery( get_the_ID() ); ?></div>
 				<div class="evenp__share"></div>
 				<?php endwhile; ?>
