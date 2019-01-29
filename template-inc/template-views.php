@@ -494,7 +494,7 @@ endif;
 
 if ( ! function_exists( 'eve_get_event_tickets' ) ) :
 	/**
-	 * Print tickets part
+	 * Print tickets buttons
 	 */
 	function eve_get_event_tickets( $id )
 	{
