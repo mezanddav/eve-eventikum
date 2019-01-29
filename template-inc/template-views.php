@@ -507,7 +507,7 @@ if ( ! function_exists( 'eve_get_event_tickets' ) ) :
 		printf( '<div class="tickets__note">%s</div>', $ticket_note ); } 
 	?>
 	<div class="tickets__btns">
-		<?php $ticket_one = get_field( 'eventikum_elso_jegy_forras', $id ); var_dump($ticket_one);
+		<?php $ticket_one = get_field( 'eventikum_elso_jegy_forras', $id );
 		if( !empty($ticket_one) ): ?>
 		<div class="tickets__btn-block">
 			<?php if( !empty($ticket_one['eventikum_jegy_hivatkozas']) ): ?>
@@ -520,7 +520,7 @@ if ( ! function_exists( 'eve_get_event_tickets' ) ) :
 			<?php endif; ?>
 		</div>
 		<?php endif; ?>
-		<?php $ticket_two = get_field( 'eventikum_masodik_jegy_forras', $id ); var_dump($ticket_two);
+		<?php $ticket_two = get_field( 'eventikum_masodik_jegy_forras', $id );
 		if( !empty($ticket_two) ): ?>
 		<div class="tickets__btn-block">
 			<?php if( !empty($ticket_two['eventikum_jegy_hivatkozas']) ): ?>
