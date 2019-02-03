@@ -1,7 +1,7 @@
 .site-footer{
-  background: #95C159;
-  padding: 100px 0 80px 0;
+  background: lighten($color__eve, 2%);
   text-align: center;
+  color: #fff;
 }
 
 .site-footer__imppr{
@@ -13,11 +13,20 @@
   font-size: 12px;
   color: #fff;
   text-decoration: none;
-  color: lighten(#95C159, 20%);
+  color: lighten($color__eve, 20%);
   
   &:visited{
-    color: lighten(#95C159, 20%); }
+    color: lighten($color__eve, 20%); }
 
   &:hover{
     color: #fff; }
+}
+
+.site-footer__top{
+  padding: 40px 0 35px 0;
+  background: darken($color__eve, 2%);
+}
+
+.site-footer__bottom{
+  padding: 60px 0 40px 0;
 }

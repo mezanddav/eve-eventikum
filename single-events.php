@@ -49,6 +49,11 @@ get_header();
 			</main>
 		</div>
 		<div class="content-aside">
+		<?php 
+		
+		$soon = get_field( 'eventikum_soon', get_the_ID() );
+		
+		if( ! $soon ): ?>
 		<aside class="evenp__sidebar">
 			<div class="evenp__sidebar-inner">
 				<div class="evenp__sidebar-until-the-event"><?php eve_get_event_date_diff( get_the_ID() );?></div>
@@ -110,9 +115,26 @@ get_header();
 			?></div>
 			<?php get_sidebar('events'); ?>
 		</aside>
+		<?php else: ?>
+		<aside class="evenp__sidebar">
+			<div class="evenp__sidebar-inner">
+				<div class="evenp__sidebar-until-the-event green"><?php _e( 'Rendezvény részletek hamarosan', 'eventikum' ); ?></div>
+				<div class="evenp__sidebar-details">
+					<div class="evenp__sidebar-newsletter-title"><?php _e( 'Iratkozz fel hírlevelünkre és értesülj a rendezvény részleteiről mindenki előtt!', 'eventikum' ); ?></div>
+					<?php if( is_active_sidebar( 'sidebar-soon' ) ): ?>
+						<ul class="evenp__sidebar-newsletter">
+							<?php dynamic_sidebar( 'sidebar-soon' ); ?>
+						</ul>
+					<?php endif; ?>
+				</div>
+			</div>
+		</aside>
+		<?php endif; ?>
 		</div>
 	</div>
 </div>
+<?php if( ! $soon ): ?>
 <div class="evenp__gmap"><?php eve_get_events_map( get_the_ID() ); ?></div>
-<?php
+<?php endif; 
+
 get_footer();

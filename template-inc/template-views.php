@@ -428,7 +428,12 @@ if ( ! function_exists( 'eve_get_event_date_diff' ) ) :
 	 */
 	function eve_get_event_date_diff( $id )
 	{
-		$event_date = new DateTime(get_field('eventikum_datum', $id));
+		$date = get_field('eventikum_datum', $id);
+		if( ! $date ){
+			_e( 'Rendezvény részletek hamarosan', 'eventikum' );
+			return; }
+
+		$event_date = new DateTime($date);
 		$current_date = new DateTime(date('Y-m-d'));
 		
 		$difference = $current_date->diff($event_date);
