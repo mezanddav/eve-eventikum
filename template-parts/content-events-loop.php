@@ -7,6 +7,8 @@
  * @package eve
  */
 
+$soon = get_field( 'eventikum_soon', get_the_ID() );
+
 ?>
 <div class="article__column">
 	<article id="post-<?php the_ID(); ?>" <?php post_class('article__event'); ?>>
@@ -21,6 +23,12 @@
 			<div class="article__details-left"></div>
 			<div class="article__details-right"></div>
 		</div>
-		<div class="article__cta"><a class="btn btn-light small block" href="<?php echo get_permalink(); ?>" title="<?php the_title(); ?>"><?php _e('BŐVEBBEN', 'eve'); ?></a></div>
+		<div class="article__cta"><a class="btn btn-light small block" href="<?php echo get_permalink(); ?>" title="<?php the_title(); ?>">
+		<?php if( ! $soon ): ?>
+			<?php _e('BŐVEBBEN', 'eve'); ?>
+		<?php else: ?>
+			<?php _e('HAMAROSAN', 'eve'); ?>
+		<?php endif; ?>
+		</a></div>
 	</article>
 </div>

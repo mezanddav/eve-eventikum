@@ -8,6 +8,9 @@
  */
 
 get_header();
+
+$soon = get_field( 'eventikum_soon', get_the_ID() );
+
 ?>
 <div class="ctn max">
 	<?php
@@ -49,11 +52,7 @@ get_header();
 			</main>
 		</div>
 		<div class="content-aside">
-		<?php 
-		
-		$soon = get_field( 'eventikum_soon', get_the_ID() );
-		
-		if( ! $soon ): ?>
+		<?php if( ! $soon ): ?>
 		<aside class="evenp__sidebar">
 			<div class="evenp__sidebar-inner">
 				<div class="evenp__sidebar-until-the-event"><?php eve_get_event_date_diff( get_the_ID() );?></div>
