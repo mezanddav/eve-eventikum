@@ -267,7 +267,7 @@ function eve_my_pre_get_posts( $query )
 		
 		$query->set('orderby', 'meta_value');	
 		$query->set('meta_key', 'eventikum_datum');	 
-		$query->set('order', 'DESC'); 
+		$query->set('order', 'ASC'); 
 		
   }
 	return $query;
