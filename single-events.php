@@ -119,7 +119,7 @@ $soon = get_field( 'eventikum_soon', get_the_ID() );
 			<div class="evenp__sidebar-inner">
 				<div class="evenp__sidebar-until-the-event green"><?php _e( 'Rendezvény részletek hamarosan', 'eventikum' ); ?></div>
 				<div class="evenp__sidebar-details">
-					<div class="evenp__sidebar-newsletter-title"><?php _e( 'Iratkozz fel hírlevelünkre és értesülj a rendezvény részleteiről mindenki előtt!', 'eventikum' ); ?></div>
+					<div class="evenp__sidebar-newsletter-title"><?php _e( 'Iratkozz fel hírlevelünkre és értesülj a rendezvény részleteiről elsőként!', 'eventikum' ); ?></div>
 					<?php if( is_active_sidebar( 'sidebar-soon' ) ): ?>
 						<ul class="evenp__sidebar-newsletter">
 							<?php dynamic_sidebar( 'sidebar-soon' ); ?>
