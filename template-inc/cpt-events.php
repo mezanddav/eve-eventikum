@@ -257,3 +257,19 @@ function eve_load_color_field_choices( $field )
   return $field; 
 }
 add_filter('acf/load_field/name=eventikum_kategoria', 'eve_load_color_field_choices');
+
+
+function eve_my_pre_get_posts( $query )
+{
+	if( is_admin() ) { return $query; }
+
+	if( isset($query->query_vars['post_type']) && $query->query_vars['post_type'] == 'events' ) {
+		
+		$query->set('orderby', 'meta_value');	
+		$query->set('meta_key', 'eventikum_datum');	 
+		$query->set('order', 'DESC'); 
+		
+  }
+	return $query;
+}
+add_action('pre_get_posts', 'eve_my_pre_get_posts');
