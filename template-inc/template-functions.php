@@ -506,6 +506,7 @@ function initMap(){
 		icon: pin,
 		title: '<?php echo esc_html(get_bloginfo('name')); ?>'
   });
+  map.panBy(0, -80);
   debug['gmap'] = 'Success';
 }
 
