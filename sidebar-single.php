@@ -12,5 +12,5 @@ if ( !is_active_sidebar( 'sidebar-single' ) ) {
 }
 ?>
 <aside class="widget-area">
-	<?php dynamic_sidebar( 'sidebar-1single' ); ?>
+	<?php dynamic_sidebar( 'sidebar-single' ); ?>
 </aside>

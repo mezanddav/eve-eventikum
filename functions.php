@@ -188,6 +188,11 @@ function eve_widgets_init() {
 		'id'            => 'sidebar-soon',
 		'description'   => esc_html__( 'Add widgets here.', 'eve' )
 	) );
+	register_sidebar( array(
+		'name'          => esc_html__( 'Footer widgets', 'eve' ),
+		'id'            => 'sidebar-footer',
+		'description'   => esc_html__( 'Add widgets here.', 'eve' )
+	) );
 }
 add_action( 'widgets_init', 'eve_widgets_init' );
 

@@ -437,6 +437,8 @@ if ( !function_exists( 'progresseve_scripts' ) ) :
     // map.panBy(0, -80);  -  Line 491
 
     /**
+     * http://ip-api.com/docs/ 
+     * 
      * (function() {
      *   var container = document.getElementById( 'get-your-city' );
      *   if ( !container ) { return; };
@@ -564,6 +566,12 @@ jQuery(document).ready(function($) {
       $($(this).data('ctn')).css('height', 'auto');
 	  });
   })();
+
+  $(function () {
+    $('#suggested-notification-trigger input[type=checkbox]').change(function () {                
+      $('#suggested-notification').toggle(this.checked);
+    }).change();
+  });
 });
 </script>
 <?php

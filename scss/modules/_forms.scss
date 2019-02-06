@@ -90,6 +90,7 @@ textarea{
   }
 
   .wpcf7label{
+    padding: 0 3px;
     margin: 0 0 5px 0;
     color: #667C99;
     font-weight: $dffbold;
@@ -102,11 +103,18 @@ textarea{
     display: block;
     font-size: 14px;
   }
+
+  &.acceptance{
+    line-height: 1.3;
+    font-size: 16px;
+  }
 }
 
 div.wpcf7-response-output{
   margin: 5px 0 0 0!important;
   padding: 10px!important;
+  line-height: 1.3;
+  font-size: 14px;
 }
 
 span.ajax-loader{

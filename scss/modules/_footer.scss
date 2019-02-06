@@ -24,9 +24,49 @@
 
 .site-footer__top{
   padding: 40px 0 35px 0;
-  background: darken($color__eve, 2%);
+  background: #f6f8fc;
+  color: #475669;
 }
 
 .site-footer__bottom{
   padding: 60px 0 40px 0;
+}
+
+.site-footer-widget{
+  max-width: 400px;
+  margin: 0 auto;
+  text-align: left;
+
+  .wpcf7row{
+
+    input{
+      text-align: inherit;
+    }
+  }
+}
+
+.site-footer-widget-list{
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.wpcf7row-suggested-block{
+  display: none;
+}
+
+.site-footer-widget-title-wrp{
+  margin: 0 0 40px 0;
+  text-align: center;
+}
+
+.site-footer-widget-title-lab{
+  margin: 0 0 10px 0;
+}
+
+.site-footer-widget-title{
+  font-family: $sff;
+  font-size: 22px;
+  font-weight: $sffregular;
+  margin: 0;
 }
