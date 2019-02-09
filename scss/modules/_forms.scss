@@ -74,6 +74,7 @@ textarea{
   padding: 10px;
   -webkit-border-radius: 4px;
   border-radius: 4px;
+  -webkit-appearance: none;
 
   &:focus{
     border-color: $color__eve;
@@ -83,9 +84,12 @@ textarea{
 select.wpcf7-form-control{
   width: 100%;
   display: block;
-  height: 43px;
+  height: 40px;
   background: #fff;
   border: 2px solid #bfcbd7;
+  -webkit-border-radius: 4px;
+  border-radius: 4px;
+  -webkit-appearance: none;
 }
 
 .wpcf7row{
