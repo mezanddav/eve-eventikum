@@ -84,7 +84,8 @@ textarea{
 select.wpcf7-form-control{
   width: 100%;
   display: block;
-  height: 40px;
+  min-height: 40px;
+  padding: 10px;
   background: #fff;
   border: 2px solid #bfcbd7;
   -webkit-border-radius: 4px;
