@@ -13,7 +13,7 @@
 
 </div>
 <footer class="site-footer">
-<?php if( is_active_sidebar( 'sidebar-footer' ) ): ?>
+<?php if( is_active_sidebar( 'sidebar-footer' ) && ! is_page_template('page-narrow.php') ): ?>
 <div class="site-footer__top">
   <div class="ctn max">
     <div class="site-footer-widget">
