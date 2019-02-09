@@ -1,6 +1,6 @@
 <?php
 
-/* Template Name: Progresseve Full Width */
+/* Template Name: Progresseve Narrow */
 
 /**
  * The template for displaying all pages
@@ -17,7 +17,7 @@
 
 get_header();
 ?>
-<div class="ctn">
+<div class="ctn narrow">
 	<div class="content-area">
 		<div class="content-main">
 			<main>
