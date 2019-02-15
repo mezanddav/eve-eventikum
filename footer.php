@@ -13,18 +13,21 @@
 
 </div>
 <footer class="site-footer">
-<?php //if( is_active_sidebar( 'sidebar-footer' ) && ! is_page_template('page-narrow.php') ): ?>
-<?php if( false ): ?>
+<?php if( is_active_sidebar( 'sidebar-footer' ) && ! is_page_template('page-narrow.php') ): ?>
+<?php //if( false ): ?>
 <div class="site-footer__top">
   <div class="ctn max">
     <div class="site-footer-widget">
       <div class="site-footer-widget-title-wrp">
         <div class="site-footer-widget-title-lab">Segíts nekünk!</div>
-        <h4 class="site-footer-widget-title">Kinek az előadására ülnél be szívesen?</h4>
+        <h4 class="site-footer-widget-title">Kinek az előadására ülnél be szívesen? Válaszolj és nyerj Zacher könyvet!</h4>
       </div>
-      <ul class="site-footer-widget-list">
-        <?php dynamic_sidebar( 'sidebar-footer' ); ?>
-      </ul>
+      <!-- <ul class="site-footer-widget-list"> -->
+        <?php //dynamic_sidebar( 'sidebar-footer' ); ?>
+      <!-- </ul> -->
+      <div style="text-align:center;">
+        <a href="btn btn-yellow" href="https://www.eventikum.ro/segits-nekunk/">Döntsd el te a következő előadót</a>
+      </div>
     </div>
   </div>
 </div>
