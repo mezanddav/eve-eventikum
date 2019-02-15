@@ -26,7 +26,7 @@
         <?php //dynamic_sidebar( 'sidebar-footer' ); ?>
       <!-- </ul> -->
       <div style="text-align:center;">
-        <a href="btn btn-yellow" href="https://www.eventikum.ro/segits-nekunk/">Döntsd el te a következő előadót</a>
+        <a class="btn btn-yellow" href="https://www.eventikum.ro/segits-nekunk/">Döntsd el te a következő előadót</a>
       </div>
     </div>
   </div>
