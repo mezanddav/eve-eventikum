@@ -33,6 +33,8 @@
         
           $plargs = array(
             'post_type' => 'partners',
+            'orderby'   => 'title',
+            'order'     => 'ASC',
             'tax_query' => array(
               array(
                 'taxonomy' => 'partner_type',
