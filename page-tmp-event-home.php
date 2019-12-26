@@ -52,12 +52,13 @@ get_header();
 			<?php
 
 			$article_loop = 1;
-			echo '<div class="article__row row-of-3">';
+			$article_cols = 2;
+			echo '<div class="article__row row-of-'. $article_cols .'">';
 
 			while ( $recent_posts->have_posts() ) : $recent_posts->the_post();
 				get_template_part( 'template-parts/content', 'events-loop' );
 
-				if( ($article_loop % 3) === 0 ){echo '</div><div class="article__row row-of-3">';}
+				if( ($article_loop % $article_cols) === 0 ){echo '</div><div class="article__row row-of-'. $article_cols .'">';}
 				$article_loop++;
 
 			endwhile;
