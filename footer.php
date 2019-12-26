@@ -51,14 +51,18 @@
               echo '<div class="partner">';
 
               $partner_link = get_field( "partner_link" );
-              if( $partner_link ){ echo sprintf( '<a class="partner__uri" target="_blank" href="%s" rel="me nofollow noopener noreferrer">', $partner_link ); }
+              if( $partner_link ){ 
+                echo sprintf( '<a class="partner__uri" target="_blank" href="%s" rel="me nofollow noopener noreferrer">', $partner_link ); 
+              }else{
+                echo sprintf( '<a class="partner__uri" target="_blank" rel="me nofollow noopener noreferrer">' ); 
+              }
 
               $partner_logo_id = get_field( "partner_logo" );
-              $partner_logo_size = 'partners';
-              $partner_logo = wp_get_attachment_image_src($partner_logo_id, $partner_logo_size, true);
+              $partner_logo_size = 'even-partners';
+              $partner_logo = wp_get_attachment_image_src( $partner_logo_id, $partner_logo_size, true );
               echo sprintf( '<img class="partner__img" src="%s" alt="%s">', $partner_logo[0], get_the_title() );
 
-              if( $partner_link ){ echo '</a>'; }
+              echo '</a>';
 
               echo '</div>';
 

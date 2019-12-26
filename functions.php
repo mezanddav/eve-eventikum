@@ -61,7 +61,7 @@ if ( ! function_exists( 'eve_setup' ) ) :
 
 
 		## Image sizes
-		add_image_size( 'partners', 150, 100, false );
+		add_image_size( 'even-partners', 150, 100, false );
 
 		# 1:1 / 10x10 Thumbnail size for: Events, Organizers, Presenters, Gallery
 		add_image_size( 'one-one-image-thumb', 20, 20, true );
