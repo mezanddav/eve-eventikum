@@ -169,12 +169,15 @@ img:not([src]) {
 .partner__title{
   margin: 0 0 10px 0;
   font-size: 16px;
+  font-family: $sff;
+  color: #475669;
+  letter-spacing: 1px;
 }
 
 .partner__row{
 
   + .partner__row{
-    margin: 20px 0 0 0;
+    margin: 30px 0 0 0;
   }
 }
 
