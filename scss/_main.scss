@@ -186,9 +186,10 @@ img:not([src]) {
   float: left;
   font-size: 0;
   display: table;
+  min-height: 50px;
 
   + .partner{
-    margin: 0 0 0 10px;
+    margin: 0 0 0 20px;
   }
 }
 
