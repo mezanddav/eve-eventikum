@@ -34,6 +34,14 @@
 <?php endif; ?>
   <div class="site-footer__bottom">
     <img class="site-footer__logo" src="<?php echo get_template_directory_uri(); ?>/img/eventikum-white-logo.png" alt="<?php echo get_bloginfo('name'); ?>">
+    <div class="site-footer__social">
+      <div class="site-header__socials">
+				<div class="site-header__social"><a href="https://www.facebook.com/eventikum.ro/" target="_blank"><svg class="i i-facebook" width="14" height="14" title="Delta fitness"><use xlink="http://www.w3.org/1999/xlink" xlink:href="#i-facebook" href="#i-facebook"></use></svg></a></div>
+				<div class="site-header__social"><a href="https://www.instagram.com/eventikum.ro/" target="_blank"><svg class="i i-instagram" width="14" height="14" title="Delta fitness"><use xlink="http://www.w3.org/1999/xlink" xlink:href="#i-instagram" href="#i-instagram"></use></svg></a></div>
+				<div class="site-header__social"><a href="https://m.me/eventikum.ro" target="_blank"><svg class="i i-messenger" width="14" height="14" title="Delta fitness"><use xlink="http://www.w3.org/1999/xlink" xlink:href="#i-messenger" href="#i-messenger"></use></svg></a></div>
+			</div>
+    </div>
+    <div class="site-footer__hirlevel"><a class="btn btn-yellow" href="https://www.eventikum.ro/iratkozz-fel-hirlevelunkre/">Iratkozz fel hírlevelünkre!</a></div>
     <div class="site-footer__imppr"><a class="site-footer__imppr-uri" href="https://www.mezeidavid.com/" title="DESIGNED BY DAVID">DESIGNED BY DAVID</a></div>
   </div>
 </footer>

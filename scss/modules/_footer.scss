@@ -71,3 +71,20 @@
   font-weight: $sffregular;
   margin: 0;
 }
+
+.site-footer__social{
+
+  .site-header__socials{
+    max-width: 140px;
+    padding: 0;
+    border: none;
+    margin: 15px auto;
+  }
+  
+  .site-header__social{
+
+    .i{
+      fill: #fff;
+    }
+  }
+}
