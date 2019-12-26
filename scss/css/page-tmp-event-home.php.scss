@@ -1,6 +1,10 @@
 @import "mixins";
 @import "vars";
 
+body{
+  background: #fafcff;
+}
+
 .article__event{
   margin: 0 0 30px 0;
 }
@@ -23,24 +27,102 @@
 }
 
 .article__img{
-  padding-bottom: 50%;
+  padding-bottom: 72.50%;
   position: relative;
   display: block;
   font-size: 0;
-  margin: 0 -5px 10px -5px;
+  // margin: 0 -5px 10px -5px;
   -webkit-border-radius: 8px;
   border-radius: 8px;
   overflow: hidden;
 
-  @media (min-width: $screen-sm-min){
-    margin: 0 0 10px 0;
-  }
+  // @media (min-width: $screen-sm-min){
+  //   margin: 0 0 10px 0;
+  // }
 
-  img{
+  > img{
     position: absolute;
+    z-index: 10;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
   }
+}
+
+.article__img-cta{
+  margin: -15px 0 0 0;
+  padding: 15px 0 0 0;
+  // background: #E1E7F0;
+  background: #fff;
+  -webkit-border-radius: 10px;
+  border-radius: 10px;
+
+  .btn{
+
+  }
+}
+
+.article__img-content{
+  position: absolute;
+  z-index: 20;
+  padding: 30px 15px 15px 15px;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: -moz-linear-gradient(top,  rgba(0,0,0,0) 0%, rgba(0,0,0,0.65) 100%);
+  background: -webkit-linear-gradient(top,  rgba(0,0,0,0) 0%,rgba(0,0,0,0.65) 100%);
+  background: linear-gradient(to bottom,  rgba(0,0,0,0) 0%,rgba(0,0,0,0.65) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000', endColorstr='#a6000000',GradientType=0 );
+}
+
+.article__img-title{
+  font-size: 20px;
+  color: #fff;
+  margin: 0;
+}
+
+.article__img-presenter{
+  margin: 0 0 15px 0;
+
+  .profile-rev__title{
+    display: none;
+  }
+
+  .profile-rev{
+    padding: 0 0 0 34px;
+  }
+
+  .profile-rev__name{
+    margin: 0;
+    padding: 6px;
+    font-size: 14px;
+    color: #e3e5e8;
+    font-weight: $dffbold;
+  }
+
+  .profile-rev__img{
+    width: 30px;
+    height: 30px;
+  }
+}
+
+.article__location{
+  // border-bottom: 1px solid lighten(#475669, 60%);
+  // text-align: center;
+  padding: 10px;
+}
+
+.article__ctn{
+  text-align: right;
+  text-decoration: none;
+  color: $color__dark;
+  font-weight: $dffbold;
+}
+
+.article__meta{
+  padding: 16px 22px;
+  font-size: 14px;
+  line-height: 1;
+  display: block;
 }
