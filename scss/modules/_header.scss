@@ -105,11 +105,16 @@ $header__height: 24px;
 
   li{
     text-align: center;
-    height: $header__height;
-    line-height: $header__height;
+    height: 36px;
+    line-height: 36px;
     @include flex(0 0 auto);
     align-items: center;
     flex-wrap: nowrap;
+
+    @media (min-width: $screen-sm-min){
+      height: $header__height;
+      line-height: $header__height;
+    }
 
     &.hh{
 
