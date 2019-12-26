@@ -180,6 +180,7 @@ img:not([src]) {
 
 .partner__list{
   @include clearfix();
+  margin: -15px 0 0 0;
 }
 
 .partner{
@@ -187,10 +188,7 @@ img:not([src]) {
   font-size: 0;
   display: table;
   min-height: 50px;
-
-  + .partner{
-    margin: 0 0 0 20px;
-  }
+  margin: 15px 15px 0 0;
 }
 
 .partner__uri{
