@@ -19,6 +19,8 @@
   
   $pterms_args = array(
     'taxonomy' => 'partner_type',
+    'orderby'   => 'name',
+    'order'     => 'DESC',
     'hide_empty' => true
   ); 
   
@@ -33,8 +35,6 @@
         
           $plargs = array(
             'post_type' => 'partners',
-            'orderby'   => 'title',
-            'order'     => 'ASC',
             'tax_query' => array(
               array(
                 'taxonomy' => 'partner_type',
