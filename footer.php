@@ -35,6 +35,7 @@
         
           $plargs = array(
             'post_type' => 'partners',
+            'posts_per_page' => -1,
             'tax_query' => array(
               array(
                 'taxonomy' => 'partner_type',
