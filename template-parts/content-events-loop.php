@@ -16,7 +16,7 @@ $soon = get_field( 'eventikum_soon', get_the_ID() );
 			<a class="article__img sh" href="<?php echo get_permalink(); ?>" data-img-type="post-thumb">
 				<div class="article__img-content">
 					<div class="article__img-presenter"><?php eve_get_profile( 'presenter', get_the_ID() ); ?></div>
-					<?php the_title( '<h2 class="article__img-title">', '</h2>' ); ?>
+					<h2 class="article__img-title"><?php echo get_field( 'eventikum_esemeny_eloadas_cime', get_the_ID() ); ?></h2>
 				</div>
 				<img class="evenp__banner-img loadlzly" src="<?php echo get_the_post_thumbnail_url( get_the_ID(), 'two-one-events-thumb' ); ?>" data-src="<?php echo get_the_post_thumbnail_url( get_the_ID(), 'two-one-events-full' ); ?>">
 			</a>
@@ -24,7 +24,7 @@ $soon = get_field( 'eventikum_soon', get_the_ID() );
 				<div class="row">
 					<div class="col-sm-6"><?php $location_city = get_field( 'eventikum_varos', get_the_ID() );
 					if( $location_city ){
-						printf( '<div class="article__meta article__location">%s</div>', $location_city ); } ?></div>
+						printf( '<div class="article__meta article__location"><svg class="i i-pin" width="16" height="16" title="%s"><use xlink="http://www.w3.org/1999/xlink" xlink:href="#i-pin" href="#i-pin"></use></svg>%s</div>', $location_city, $location_city ); } ?></div>
 					<div class="col-sm-6">
 						<a class="article__meta article__ctn" href="<?php echo get_permalink(); ?>" title="<?php the_title(); ?>"><?php if( ! $soon ): _e('BŐVEBBEN', 'eve'); else: _e('HAMAROSAN', 'eve'); endif; ?></a>
 					</div>
