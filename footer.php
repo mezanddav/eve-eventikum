@@ -58,6 +58,7 @@
               }
 
               $partner_logo_id = get_field( "partner_logo" );
+              var_dump($partner_logo_id);
               $partner_logo = wp_get_attachment_image_src( $partner_logo_id, 'even-partners', false );
               var_dump($partner_logo);
               echo sprintf( '<img class="partner__img" src="%s" alt="%s">', $partner_logo[0], get_the_title() );
