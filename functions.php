@@ -89,6 +89,7 @@ add_action( 'after_setup_theme', 'eve_setup' );
 require get_theme_file_path('template-inc/cpt-events.php');
 require get_theme_file_path('template-inc/cpt-presenters.php');
 require get_theme_file_path('template-inc/cpt-organizers.php');
+require get_theme_file_path('template-inc/cpt-partners.php');
 
 
 

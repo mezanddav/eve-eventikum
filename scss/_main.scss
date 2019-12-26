@@ -158,3 +158,34 @@ img:not([src]) {
 .wp-block-audio{
   margin: 15px 0;
 }
+
+// Partners
+.partners{
+  background: #fff;
+  border-top: 6px solid $color__eve;
+  padding: 20px 0;
+}
+
+.partner__title{
+  margin: 0 0 5px 0;
+  font-size: 16px;
+}
+
+.partner__row{
+
+  + .partner__row{
+    margin: 20px 0 0 0;
+  }
+}
+
+.partner__list{
+  @include clearfix();
+}
+
+.partner{
+  float: left;
+
+  + .partner{
+    margin: 0 0 0 10px;
+  }
+}

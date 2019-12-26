@@ -12,6 +12,54 @@
 ?>
 
 </div>
+
+<div class="site-partners partners">
+<!-- <div class="ctn max"><h2 class="partners__title">Támogatók</h2></div> -->
+<div class="ctn max"><?php 
+  
+  $pterms_args = array(
+    'taxonomy' => 'partner_type',
+    'hide_empty' => true
+  ); 
+  
+  $pterms = get_terms( $pterms_args );
+
+  foreach( $pterms as $pterm ): ?>
+
+    <div class="partner__row">
+      <div class="partner__title"><?php echo $pterm->name; ?></div>
+      <div class="partner__list">
+        <?php 
+        
+          $plargs = array(
+            'post_type' => 'partners',
+            'tax_query' => array(
+              array(
+                'taxonomy' => 'partner_type',
+                'field' => 'term_id',
+                'terms' => $pterm->term_id
+              )
+            )
+          );
+
+          $pl_query = new WP_Query( $plargs );
+
+          if( $pl_query->have_posts() ){
+            while( $pl_query->have_posts() ):
+              $pl_query->the_post();
+              echo sprintf( '<a class="partner" href="#0"><img src="" alt="">%s</a>', get_the_title() );
+            endwhile;
+          }
+          
+          wp_reset_postdata();
+        
+        ?>
+      </div>
+    </div>
+
+  <?php endforeach; ?>
+</div></div>
+
 <footer class="site-footer">
 <?php //if( is_active_sidebar( 'sidebar-footer' ) && ! is_page_template('page-narrow.php') ): ?>
 <?php if( false ): ?>
