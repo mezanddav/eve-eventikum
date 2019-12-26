@@ -54,7 +54,7 @@
               if( $partner_link ){ 
                 echo sprintf( '<a class="partner__uri" target="_blank" href="%s" rel="me nofollow noopener noreferrer">', $partner_link ); 
               }else{
-                echo sprintf( '<a class="partner__uri" target="_blank" rel="me nofollow noopener noreferrer">' ); 
+                echo sprintf( '<a class="partner__uri">' ); 
               }
 
               $partner_logo_id = get_field( "partner_logo" );
