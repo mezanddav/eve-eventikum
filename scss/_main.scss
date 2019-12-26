@@ -167,7 +167,7 @@ img:not([src]) {
 }
 
 .partner__title{
-  margin: 0 0 5px 0;
+  margin: 0 0 10px 0;
   font-size: 16px;
 }
 
@@ -188,4 +188,14 @@ img:not([src]) {
   + .partner{
     margin: 0 0 0 10px;
   }
+}
+
+.partner__uri{
+  display: block;
+  font-size: 0;
+}
+
+.partner__img{
+  max-width: 80px;
+  max-height: 50px;
 }

@@ -47,7 +47,19 @@
           if( $pl_query->have_posts() ){
             while( $pl_query->have_posts() ):
               $pl_query->the_post();
-              echo sprintf( '<a class="partner" href="#0"><img src="" alt="">%s</a>', get_the_title() );
+
+              echo '<div class="partner">';
+
+              $partner_link = get_field( "partner_link" );
+              if( $partner_link ){ echo sprintf( '<a class="partner__uri" target="_blank" href="%s" rel="me nofollow noopener noreferrer">', $partner_link ); }
+
+              $partner_logo = get_field( "partner_logo" );
+              echo sprintf( '<img class="partner__img" src="%s" alt="%s">', $partner_logo, get_the_title() );
+
+              if( $partner_link ){ echo '</a>'; }
+
+              echo '</div>';
+
             endwhile;
           }
           
