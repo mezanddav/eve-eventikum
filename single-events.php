@@ -18,12 +18,16 @@ $soon = get_field( 'eventikum_soon', get_the_ID() );
 	<div class="evenp__banner sh<?php if(wp_is_mobile()){ echo ' mobile'; } ?>">
 		<div class="evenp__banner-presenter<?php if(wp_is_mobile()){ echo ' mobile'; } ?>"><?php eve_get_profile( 'presenter', get_the_ID() ); ?></div>
 		<div class="evenp__banner-presenter-bg"></div>
-		<?php 
-		//wp_is_mobile() 
-		if( true ): ?>
+		<?php if( wp_is_mobile() ): ?>
 		<div class="evenp__banner-psn mobile"><img class="evenp__banner-img loadlzly" src="<?php echo get_the_post_thumbnail_url( get_the_ID(), 'two-one-events-thumb' ); ?>" data-src="<?php echo get_the_post_thumbnail_url( get_the_ID(), 'two-one-events-full' ); ?>"></div>
 		<?php else: ?>
-		<div class="evenp__banner-psn desktop"><img class="evenp__banner-img loadlzly" src="<?php echo get_the_post_thumbnail_url( get_the_ID(), 'tree-one-events-thumb' ); ?>" data-src="<?php echo get_the_post_thumbnail_url( get_the_ID(), 'tree-one-events-full' ); ?>"></div>
+		<?php 
+			$eventikum_esemeny_oldal_banner = get_field( 'eventikum_esemeny_oldal_banner', get_the_ID() );
+			if( $eventikum_esemeny_oldal_banner ): ?>
+			<div class="evenp__banner-psn desktop">
+				<img class="evenp__banner-img loadlzly" src="<?php echo wp_get_attachment_image_src( $eventikum_esemeny_oldal_banner, 'tree-one-events-thumb', false )[0]; ?>" data-src="<?php echo wp_get_attachment_image_src( $eventikum_esemeny_oldal_banner, 'tree-one-events-full', false )[0]; ?>">
+			</div>
+			<?php endif; ?>
 		<?php endif; ?>
 	</div>
 	<?php endif; ?>
