@@ -574,14 +574,10 @@ jQuery(document).ready(function($) {
     }).change();
   });
 
-  // Fly
+
 	(function() {
-		// return;
 		checkelem = document.getElementById( 'fly' );
 		if ( !checkelem ) { return; }
-
-		// var mX, mY, distance,
-		// $element  = $('#fly-top');
 		
 		function calculateDistance(elem, mouseX, mouseY) {
 			return Math.floor(Math.sqrt(Math.pow(mouseX - (elem.offset().left+(elem.width()/2)), 2) + Math.pow(mouseY - (elem.offset().top+(elem.height()/2)), 2)));
