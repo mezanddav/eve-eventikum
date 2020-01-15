@@ -506,12 +506,12 @@ if ( ! function_exists( 'eve_get_event_tickets' ) ) :
 ?>
 <div class="tickets">
 	<div class="tickets__title"><?php _e( 'JEGYEK', 'eventikum' ); ?></div>
-	<div class="tickets__fly"><img id="fly" class="fly" src="<?php echo get_template_directory_uri(); ?>/img/fly.gif?v=3.0.0"></div>
 	<?php 
 	$ticket_note = get_field( 'eventikum_jegy_leiras', $id );
 	if( $ticket_note ){
 		printf( '<div class="tickets__note">%s</div>', $ticket_note ); } 
 	?>
+	<div class="tickets__fly"><img id="fly" class="fly" src="<?php echo get_template_directory_uri(); ?>/img/fly.gif?v=3.0.0"></div>
 	<div class="tickets__btns">
 		<?php $ticket_one = get_field( 'eventikum_elso_jegy_forras', $id );
 		if( !empty($ticket_one['eventikum_jegy_hivatkozas']) || !empty($ticket_one['eventikum_jegy_gomb_leiras']) || !empty($ticket_one['eventikum_jegy_leiras']) ): ?>
