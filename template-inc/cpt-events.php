@@ -205,7 +205,7 @@ function eve_events_cpt() {
     'parent_item_colon'     => __( 'Parent események:', 'eve' ),
     'not_found'             => __( 'No események found.', 'eve' ),
     'not_found_in_trash'    => __( 'No események found in Trash.', 'eve' ),
-    'featured_image'        => _x( 'Esemény fő képe (1:1,3:1)', 'Overrides the “Featured Image” phrase for this post type. Added in 4.3', 'eve' ),
+    'featured_image'        => _x( 'Esemény fő képe (1:1)', 'Overrides the “Featured Image” phrase for this post type. Added in 4.3', 'eve' ),
     'set_featured_image'    => _x( 'Esemény kép beállítása', 'Overrides the “Set featured image” phrase for this post type. Added in 4.3', 'eve' ),
     'remove_featured_image' => _x( 'Remove cover image', 'Overrides the “Remove featured image” phrase for this post type. Added in 4.3', 'eve' ),
     'use_featured_image'    => _x( 'Use as cover image', 'Overrides the “Use as featured image” phrase for this post type. Added in 4.3', 'eve' ),

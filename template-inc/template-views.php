@@ -506,6 +506,7 @@ if ( ! function_exists( 'eve_get_event_tickets' ) ) :
 ?>
 <div class="tickets">
 	<div class="tickets__title"><?php _e( 'JEGYEK', 'eventikum' ); ?></div>
+	<div class="tickets__fly"><img id="fly" class="fly" src="<?php echo get_template_directory_uri(); ?>/img/fly.gif?v=3.0.0"></div>
 	<?php 
 	$ticket_note = get_field( 'eventikum_jegy_leiras', $id );
 	if( $ticket_note ){

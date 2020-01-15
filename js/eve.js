@@ -123,6 +123,7 @@ var dfLazyLoad = new LazyLoad({
 });
 
 (function($){
+
 	// Click to scroll
 	$("a[href*='#']:not([href='#'])").click(function() {
 		if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
@@ -136,4 +137,63 @@ var dfLazyLoad = new LazyLoad({
 			}
 		}
 	});
+
+	// Fly
+	(function() {
+		// return;
+		checkelem = document.getElementById( 'fly' );
+		if ( !checkelem ) { return; }
+
+		// var mX, mY, distance,
+		// $element  = $('#fly-top');
+		
+		function calculateDistance(elem, mouseX, mouseY) {
+			return Math.floor(Math.sqrt(Math.pow(mouseX - (elem.offset().left+(elem.width()/2)), 2) + Math.pow(mouseY - (elem.offset().top+(elem.height()/2)), 2)));
+		}
+
+		function randomIntFromInterval(min,max){
+			return Math.floor(Math.random()*(max-min+1)+min);
+		}
+
+		function getOffset(el) {
+			const rect = el.getBoundingClientRect();
+			return {
+				left: rect.left + window.scrollX,
+				top: rect.top + window.scrollY
+			};
+		}
+		
+		var $testelem = $('#fly');
+		var testangle = 1;
+
+		function refreshData(){
+			x = 3;
+			testangle = randomIntFromInterval(1,365);
+
+			$testelem.css({
+				'transform':'translate('+ ((Math.sin(testangle)*30).toFixed(2)) +'px,'+ ((Math.cos(testangle)*30).toFixed(2)) +'px) rotate('+ testangle + 'deg)',
+				'filter':'blur(0)',
+				'opacity':'1'
+			});
+
+			setTimeout(refreshData, x*1000);
+		}
+		refreshData();
+
+		$(document).mousemove(function(e) {  
+			mX = e.pageX;
+			mY = e.pageY;
+			distance = calculateDistance($testelem, mX, mY);
+			if( distance < 100 ){
+				testangle = randomIntFromInterval(1,360);
+				$testelem.css({
+					'transform':'translate('+ ((Math.sin(testangle)*30).toFixed(2)) +'px,'+ ((Math.cos(testangle)*30).toFixed(2)) +'px) rotate('+ testangle + 'deg)',
+					'filter':'blur(1px)',
+					'opacity':'0'
+				});
+			}   
+		});
+
+	})();
+
 })(jQuery);
