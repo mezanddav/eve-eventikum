@@ -61,11 +61,17 @@ $soon = get_field( 'eventikum_soon', get_the_ID() );
 
 		<?php if( get_the_ID() == 220 ): ?>
 		<div class="sofu">
-			<div class="sofu__title">Keresett előadás</div>
-			<div class="sofu__desc">Kérjük szerezzék be mielőbb jegyeiket az előadásra!</div>
+			<div class="sofu__title">Keresett előadás!</div>
+			<div class="sofu__desc">Kérjük szerezze be mielőbb jegyét az előadásra.</div>
 			<div class="sofu__bar"><div class="sofu__bar-inner" style="width:<?php echo 80 + (floor((int)date("j") / ((int)date("t") / 19))); ?>%;"><div class="sofu__bar-stripe"></div></div></div>
 		</div>
 		<br>
+		<style>
+			.tickets__title{
+				color: #E65C5C;
+				font-size: 18px;
+			}
+		</style>
 		<?php endif; ?>
 
 		<?php if( ! $soon ): ?>
