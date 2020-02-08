@@ -59,7 +59,9 @@ $soon = get_field( 'eventikum_soon', get_the_ID() );
 		</div>
 		<div class="content-aside">
 
-		<?php if( get_the_ID() == 220 ): ?>
+		<?php 
+		$urgency_pages = array(220,223);
+		if( in_array( get_the_ID(), $urgency_pages ) ): ?>
 		<div class="sofu">
 			<div class="sofu__title">Keresett előadás!</div>
 			<div class="sofu__desc">Kérjük szerezze be mielőbb jegyét az előadásra.</div>
