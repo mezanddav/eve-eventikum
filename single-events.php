@@ -58,6 +58,16 @@ $soon = get_field( 'eventikum_soon', get_the_ID() );
 			</main>
 		</div>
 		<div class="content-aside">
+
+		<?php if( is_page(220) ): ?>
+		<div class="sofu">
+			<div class="sofu__title">Keresett előadás</div>
+			<div class="sofu__desc">Kérjük szerezzék be mielőbb jegyeiket az előadásra!</div>
+			<div class="sofu__bar"><div class="sofu__bar-inner" style="width:<?php echo 80 + (floor((int)date("j") / ((int)date("t") / 19))); ?>%;"><div class="sofu__bar-stripe"></div></div></div>
+		</div>
+		<br>
+		<?php endif; ?>
+
 		<?php if( ! $soon ): ?>
 		<aside class="evenp__sidebar">
 			<div class="evenp__sidebar-inner">
