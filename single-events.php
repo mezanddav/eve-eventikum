@@ -61,7 +61,7 @@ $soon = get_field( 'eventikum_soon', get_the_ID() );
 
 		<?php 
 
-		$urgency = get_field( 'eventikum_kategoria', get_the_ID() );
+		$urgency = get_field( 'eventikum_sense_of_urgnecy', get_the_ID() );
 		var_dump($urgency);
 
 		$urgency_pages = array(220,223);
