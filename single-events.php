@@ -68,20 +68,20 @@ $soon = get_field( 'eventikum_soon', get_the_ID() );
 
 				if( $urgency == 'urgency' ):
 					?><div class="sofu sofu--type-red">
-						<div class="sofu__title">Keresett előadás!</div>
-						<div class="sofu__desc">Kérjük szerezze be mielőbb jegyét az előadásra.</div>
+						<div class="sofu__title">Fogytán a jegyek!</div>
+						<div class="sofu__desc">Kérjük szerezze be mielőbb belépőjét.</div>
 						<div class="sofu__bar"><div class="sofu__bar-inner" style="width:<?php echo 80 + (floor((int)date("j") / ((int)date("t") / 19))); ?>%;"><div class="sofu__bar-stripe"></div></div></div>
 					</div><br><?php
 				elseif( $urgency == 'available' ):
 					?><div class="sofu sofu--type-green">
 						<div class="sofu__title">A jegyek elérhetőek!</div>
-						<!-- <div class="sofu__desc">Kérjük szerezze be mielőbb jegyét az előadásra.</div> -->
+						<div class="sofu__desc">Váltson belépőt az előadásra.</div>
 						<div class="sofu__bar"><div class="sofu__bar-inner" style="width:<?php echo 80 + (floor((int)date("j") / ((int)date("t") / 19))); ?>%;"><div class="sofu__bar-stripe"></div></div></div>
 					</div><br><?php
 				elseif( $urgency == 'sold_out' ):
 					?><div class="sofu sofu--type-red">
 						<div class="sofu__title">Az előadásra minden jegy elkelt!</div>
-						<!-- <div class="sofu__desc">Kérjük szerezze be mielőbb jegyét az előadásra.</div> -->
+						<div class="sofu__desc">Sajnos már nem tud belépőt vásárolni.</div>
 						<div class="sofu__bar"><div class="sofu__bar-inner" style="width:<?php echo 80 + (floor((int)date("j") / ((int)date("t") / 19))); ?>%;"><div class="sofu__bar-stripe"></div></div></div>
 					</div><br><?php
 				endif;

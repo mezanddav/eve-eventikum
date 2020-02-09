@@ -268,8 +268,18 @@
 
 // Urgency
 // Sense of urgency
-.sofu{
+.sofu{}
 
+.sofu--type-green{
+  .sofu__title{
+    color: $color__eve;
+  }
+  .sofu__bar{
+    background: lighten($color__eve, 40)
+  }
+  .sofu__bar-inner{
+    background: $color__eve;
+  }
 }
 
 .sofu__bar{
