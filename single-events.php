@@ -62,25 +62,34 @@ $soon = get_field( 'eventikum_soon', get_the_ID() );
 		<?php 
 
 		$urgency = get_field( 'eventikum_sense_of_urgnecy', get_the_ID() );
-		var_dump($urgency);
 
-		$urgency_pages = array(220,223);
-		if( in_array( get_the_ID(), $urgency_pages ) ): ?>
-		<div class="sofu sofu--type-red">
-			<div class="sofu__title">Keresett előadás!</div>
-			<div class="sofu__desc">Kérjük szerezze be mielőbb jegyét az előadásra.</div>
-			<div class="sofu__bar"><div class="sofu__bar-inner" style="width:<?php echo 80 + (floor((int)date("j") / ((int)date("t") / 19))); ?>%;"><div class="sofu__bar-stripe"></div></div></div>
-		</div>
-		<br>
-		<style>
-			.tickets__title{
-				color: #E65C5C;
-				font-size: 18px;
+		if( $urgency ){
+			if( $urgency != 'off' ){
+
+				if( $urgency == 'urgency' ):
+					?><div class="sofu sofu--type-red">
+						<div class="sofu__title">Keresett előadás!</div>
+						<div class="sofu__desc">Kérjük szerezze be mielőbb jegyét az előadásra.</div>
+						<div class="sofu__bar"><div class="sofu__bar-inner" style="width:<?php echo 80 + (floor((int)date("j") / ((int)date("t") / 19))); ?>%;"><div class="sofu__bar-stripe"></div></div></div>
+					</div><br><?php
+				elseif( $urgency == 'available' ):
+					?><div class="sofu sofu--type-green">
+						<div class="sofu__title">A jegyek elérhetőek!</div>
+						<!-- <div class="sofu__desc">Kérjük szerezze be mielőbb jegyét az előadásra.</div> -->
+						<div class="sofu__bar"><div class="sofu__bar-inner" style="width:<?php echo 80 + (floor((int)date("j") / ((int)date("t") / 19))); ?>%;"><div class="sofu__bar-stripe"></div></div></div>
+					</div><br><?php
+				elseif( $urgency == 'sold_out' ):
+					?><div class="sofu sofu--type-red">
+						<div class="sofu__title">Az előadásra minden jegy elkelt!</div>
+						<!-- <div class="sofu__desc">Kérjük szerezze be mielőbb jegyét az előadásra.</div> -->
+						<div class="sofu__bar"><div class="sofu__bar-inner" style="width:<?php echo 80 + (floor((int)date("j") / ((int)date("t") / 19))); ?>%;"><div class="sofu__bar-stripe"></div></div></div>
+					</div><br><?php
+				endif;
+
 			}
-		</style>
-		<?php endif; ?>
-
-		<?php if( ! $soon ): ?>
+		}
+		
+		if( ! $soon ): ?>
 		<aside class="evenp__sidebar">
 			<div class="evenp__sidebar-inner">
 				<div class="evenp__sidebar-until-the-event"><?php eve_get_event_date_diff( get_the_ID() );?></div>
