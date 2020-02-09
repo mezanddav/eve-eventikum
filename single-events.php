@@ -76,7 +76,7 @@ $soon = get_field( 'eventikum_soon', get_the_ID() );
 					?><div class="sofu sofu--type-green">
 						<div class="sofu__title">A jegyek elérhetőek!</div>
 						<div class="sofu__desc">Váltson belépőt az előadásra.</div>
-						<div class="sofu__bar"><div class="sofu__bar-inner" style="width:<?php echo 80 + (floor((int)date("j") / ((int)date("t") / 19))); ?>%;"><div class="sofu__bar-stripe"></div></div></div>
+						<div class="sofu__bar"><div class="sofu__bar-inner" style="width:<?php echo 10 + (floor((int)date("j") / ((int)date("t") / 19))); ?>%;"><div class="sofu__bar-stripe"></div></div></div>
 					</div><br><?php
 				elseif( $urgency == 'sold_out' ):
 					?><div class="sofu sofu--type-red">
