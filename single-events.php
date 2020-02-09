@@ -60,9 +60,13 @@ $soon = get_field( 'eventikum_soon', get_the_ID() );
 		<div class="content-aside">
 
 		<?php 
+
+		$urgency = get_field( 'eventikum_kategoria', get_the_ID() );
+		var_dump($urgency);
+
 		$urgency_pages = array(220,223);
 		if( in_array( get_the_ID(), $urgency_pages ) ): ?>
-		<div class="sofu">
+		<div class="sofu sofu--type-red">
 			<div class="sofu__title">Keresett előadás!</div>
 			<div class="sofu__desc">Kérjük szerezze be mielőbb jegyét az előadásra.</div>
 			<div class="sofu__bar"><div class="sofu__bar-inner" style="width:<?php echo 80 + (floor((int)date("j") / ((int)date("t") / 19))); ?>%;"><div class="sofu__bar-stripe"></div></div></div>
