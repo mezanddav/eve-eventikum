@@ -55,7 +55,7 @@
 
               $partner_link = get_field( "partner_link" );
               if( $partner_link ){ 
-                echo sprintf( '<a class="partner__uri" target="_blank" href="%s" rel="me nofollow noopener noreferrer">', $partner_link ); 
+                echo sprintf( '<a class="partner__uri" target="_blank" href="%s" rel="nofollow noopener noreferrer">', $partner_link ); 
               }else{
                 echo sprintf( '<a class="partner__uri">' ); 
               }
