@@ -80,7 +80,7 @@ $soon = get_field( 'eventikum_soon', get_the_ID() );
 					</div><br><?php
 				elseif( $urgency == 'sold_out' ):
 					?><div class="sofu sofu--type-soldout">
-						<div class="sofu__title">Az előadásra minden jegy elkelt!</div>
+						<div class="sofu__title">Minden jegy elkelt!</div>
 						<div class="sofu__desc">Sajnos már nem tud belépőt vásárolni.</div>
 						<div class="sofu__bar"><div class="sofu__bar-inner" style="width:100%;"><div class="sofu__bar-stripe"></div></div></div>
 					</div><br><?php
