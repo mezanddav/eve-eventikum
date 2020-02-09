@@ -288,6 +288,12 @@
       display: none;
     }
   }
+  .sofu__bar{
+    background: lighten(#bb1b3b, 50)
+  }
+  .sofu__bar-inner{
+    background: #bb1b3b;
+  }
 }
 
 .sofu__bar{

@@ -172,7 +172,10 @@ body{
   background: $color__eve;
 }
 
-.soful--type-soldout,
+.soful--type-soldout{
+  background: #bb1b3b;
+}
+
 .soful--type-urgency{
   background: #E65C5C;
 }
