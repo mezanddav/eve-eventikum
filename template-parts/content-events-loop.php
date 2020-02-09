@@ -14,6 +14,23 @@ $soon = get_field( 'eventikum_soon', get_the_ID() );
 	<article id="post-<?php the_ID(); ?>" <?php post_class('article__event'); ?>>
 		<?php if( has_post_thumbnail( get_the_ID() ) ): ?>
 			<a class="article__img sh" href="<?php echo get_permalink(); ?>" data-img-type="post-thumb">
+				<?php 
+				
+				$urgency = get_field( 'eventikum_sense_of_urgnecy', get_the_ID() );
+
+				if( $urgency ){
+					if( $urgency != 'off' ){
+						if( $urgency == 'urgency' ):
+							?><div class="soful soful--type-urgency">Fogytán a jegyek!</div><?php
+						elseif( $urgency == 'available' ):
+							?><div class="soful soful--type-available">Jegyek elérhetőek!</div><?php
+						elseif( $urgency == 'sold_out' ):
+							?><div class="soful soful--type-soldout">Teltház!</div><?php
+						endif;
+					}
+				}
+				
+				?>
 				<div class="article__img-content">
 					<div class="article__img-presenter"><?php eve_get_profile( 'presenter', get_the_ID() ); ?></div>
 					<h2 class="article__img-title"><?php echo get_field( 'eventikum_esemeny_eloadas_cime', get_the_ID() ); ?></h2>
